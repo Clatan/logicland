@@ -7,5 +7,65 @@
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+        'Segoe UI Symbol', 'Noto Color Emoji', 'Jolly Lodger';
+}
+
+.centered-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+}
+
+.logo-link img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    color: #FFF;
+    text-align: center;
+    text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Jolly Lodger";
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 250;
+    z-index: 10;
+    line-height: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 100px;
+    width: 100%;
+}
+
+.start-button{
+    position: relative;
+    margin-right: 80px;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    transition: none;
+}
+
+.start-button:hover {
+    transform: none;
+}
+
+.start-button:hover .text-overlay {
+    color: #B8AF9C;
+    text-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25) inset;
 }
