@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('load');
 });
 
-Route::get('/logicland', function () {
-    return view('load');
+Route::get('/welcome', function () {
+    return view('welcome');
 });
