@@ -15,7 +15,8 @@
         <a href="{{ url('/') }}" class="start-button">
             <h1 class="text-overlay">Start</h1>
         </a>
-        <img src="{{ asset('asset/logo.svg') }}" alt="Logic Land" style="position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); position: absolute; z-index: 5;">            
+        <img src="{{ asset('asset/logo.svg') }}" alt="Logic Land" style="position:absolute; top: 47%; left: 50%; transform: translate(-50%, -50%); z-index: 5; width: 45%;">            
+        <img src="{{ asset('asset/cloud.svg') }}" alt="cloud" style="position:absolute; top: 50%; ;left: 50%; transform: translate(-50%, -50%); z-index: 1; width: 100%;">
     </div>
 </body>
 
@@ -25,10 +26,11 @@
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
     }
 </style>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logic Land</title>
+    <title>Sign Up</title>
     <link rel="icon" type="svg+xml" href="{{ asset('asset/logo.svg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,9 +13,6 @@
 <body>
     <img src="../asset/island-polos.svg" alt="land" style="position: absolute; bottom: 0; width: 90%;">
     <div class="main-container">
-        <img src="{{ asset('asset/about-login.svg') }}" alt="button-stand" class="button-stand">
-        <a href="/about" class="button about-button"></a>
-        <a href="/login" class="button login-button"></a>
     </div>
 </body>
 

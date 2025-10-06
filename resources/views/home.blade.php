@@ -12,11 +12,7 @@
 </head>
 <body>
     <img src="../asset/island-polos.svg" alt="land" style="position: absolute; bottom: 0; width: 90%;">
-    <div class="main-container">
-        <img src="{{ asset('asset/about-login.svg') }}" alt="button-stand" class="button-stand">
-        <a href="/about" class="button about-button"></a>
-        <a href="/login" class="button login-button"></a>
-    </div>
+    <h1>ni hao</h1>
 </body>
 
 <style>
