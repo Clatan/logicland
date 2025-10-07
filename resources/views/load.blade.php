@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="centered-container">
-        <a href="{{ url('/') }}" class="start-button">
+        <a href="{{ url('/welcome') }}" class="start-button">
             <h1 class="text-overlay">Start</h1>
         </a>
         <img src="{{ asset('asset/logo.svg') }}" alt="Logic Land" style="position:absolute; top: 47%; left: 50%; transform: translate(-50%, -50%); z-index: 5; width: 45%;">            

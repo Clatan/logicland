@@ -15,4 +15,15 @@ class PageController extends Controller
     {
         return view('login');
     }
+
+    public function welcome()
+    {
+        return view('welcome');
+    }
+
+    public function signup()
+    {
+        return view('signup');
+    }
+
 }
