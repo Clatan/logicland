@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('stages', function (Blueprint $table) {
             $table->id('stage_id');
-            $table->integer('stage_name')-> unique();
+            $table->integer('stage_name');
             $table->unsignedBigInteger('level_id');
             $table->foreign('level_id')-> references('level_id')-> on('levels')-> onDelete('cascade');
             $table->timestamps();
