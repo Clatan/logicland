@@ -48,7 +48,7 @@
     font-weight: 250;
     line-height: normal;
     margin-top: -600px; 
-    margin-bottom: 0;
+    margin-bottom: -20px;
     width: 100%;
     z-index: 10;
 }
@@ -120,6 +120,7 @@ form {
     font-weight: 900;
     transition: background-color 0.3s ease;
     z-index: 10;
+    margin-top: 15px;
 }
 
 .signup-link {
