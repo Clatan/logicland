@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Account</title>
+    <title>SignUp Account</title>
     <link rel="icon" type="svg+xml" href="{{ asset('asset/logo.svg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,16 +18,41 @@
         <img src="{{ asset('asset/bckg-login.svg') }}" alt="button-stand-login" class="button-stand-login">
         <a href="\welcome" class="button-cancel"></a>
         <h1 class="signup-title">Register Acc</h1>
-        <form action="">
-            <input type="email" class="signup-input" placeholder="Enter your email" required>
-            <input type="username" class="signup-input" placeholder="Enter your username" required>
-            <input type="password" class="signup-input" placeholder="Enter your password" required>
+        <form action="/signup-post" method="POST">
+            @csrf
+            <input type="email" name="email" class="signup-input" placeholder="Enter your email" required>
+            @error('email')
+                <div class="error-message">
+                    {{ $message }}
+                </div>
+            @enderror
+            <input type="username" name="username" class="signup-input" placeholder="Enter your username" required>
+            @error('username')
+                <div class="error-message">
+                    {{ $message }}
+                </div>
+            @enderror
+            <input type="password" name="password" class="signup-input" placeholder="Enter your password" required>
+            @error('password')
+                <div class="error-message">
+                    {{ $message }}
+                </div>
+            @enderror
+            
+            @if (session('error'))
+                <div class="error-message-center">{{ session('error') }}</div>
+            @endif
+
+            @if (session('success'))
+                <div class="success-message">{{ session('success') }}</div>
+            @endif
+
             <button type="submit" class="signup-button">Register</button>
         </form>
-        {{-- <div class="signup-link">
-        Don't have an account yet?
-        <a href="/register">Sign Up</a>
-    </div> --}}
+        <div class="login-link">
+        Already have an account?
+        <a href="/login">Login</a>
+    </div>
     </div>
 </body>
 

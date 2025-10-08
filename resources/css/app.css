@@ -1,14 +1,7 @@
 @import 'tailwindcss';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
-@source '../**/*.js';
-
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji', 'Jolly Lodger';
+:root {
+    --font-sans: 'Jolly Lodger';
 }
 
 .centered-container {
@@ -77,7 +70,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    z-index: 0; /* paling belakang */
+    z-index: 0; 
 }
 
 .main-container {

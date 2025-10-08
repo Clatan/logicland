@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* vertikal tengah jika tinggi cukup */
+    justify-content: center;
     position: relative;
 }
 
@@ -22,8 +22,7 @@
     width: 65px;    
     height: 64px;
     scale: 80%;
-    z-index: 20;    
-    /* cursor: pointer; */
+    z-index: 20; 
 }
 
 .button-cancel:hover {
@@ -47,8 +46,8 @@
     font-style: normal;
     font-weight: 250;
     line-height: normal;
-    margin-top: -610px; 
-    margin-bottom: 0;
+    margin-top: -620px; 
+    margin-bottom: -25px;
     width: 100%;
     z-index: 10;
 }
@@ -80,20 +79,20 @@ form {
 }
 
 .signup-input:first-child {
-    margin-bottom: 5px; /* jarak bawah username */
+    margin-bottom: 5px; 
 }
 
 .signup-input:nth-child(2) {
-    margin-bottom: 5px; /* jarak bawah username */
+    margin-bottom: 5px; 
 }
 
 .signup-input[type="password"] {
-    margin-bottom: 25px; /* jarak bawah password */
+    margin-bottom: 5px; /* jarak bawah password */
 }
 
 .signup-input:focus {
     outline: none;
-    border: 1px solid #61493D;
+    border: 2px solid #61493D;
     /* border-color: #A67C52;
     box-shadow: 0 0 5px rgba(166, 124, 82, 0.5); */
 }
@@ -110,6 +109,60 @@ form {
     font-family: 'Nunito', sans-serif;
     font-style: bold;
     font-weight: 900;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: -5px;
     transition: background-color 0.3s ease;
     z-index: 10;
+}
+
+.error-message-center {
+    color: #e74c3c;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    width: 250px;
+    margin-top: -5px;
+    margin-bottom: 5px; 
+    z-index: 10;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    width: 250px;
+    margin-top: -5px;
+    z-index: 10;
+}
+
+.success-message {
+    color: #42e73c;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    width: 250px;
+    margin-top: -5px;
+    margin-bottom: 5px; 
+    z-index: 10;
+}
+
+.login-link {
+    color: #61493D;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    margin-top: 15px;
+    z-index: 10;
+}
+
+.login-link a {
+    color: #A67C52;
+    text-decoration: underline;
+    margin-left: 5px;
+    font-weight: bold;
+    transition: color 0.2s;
 }
