@@ -11,7 +11,7 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <img src="../asset/island-polos.svg" alt="land" style="position: absolute; bottom: 0; width: 90%;">
+    <img src="../asset/island-polos.svg" alt="land" style="position: absolute; bottom: -50px; width: 90%;">
     <h1>ni hao</h1>
 </body>
 
