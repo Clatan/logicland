@@ -11,13 +11,8 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div class="centered-container">
-        <a href="{{ url('/welcome') }}" class="start-button">
-            <h1 class="text-overlay">Start</h1>
-        </a>
-        <img src="{{ asset('asset/logo.svg') }}" alt="Logic Land" style="position:absolute; top: 47%; left: 50%; transform: translate(-50%, -50%); z-index: 5; width: 45%;">            
-        <img src="{{ asset('asset/cloud.svg') }}" alt="cloud" style="position:absolute; top: 50%; ;left: 50%; transform: translate(-50%, -50%); z-index: 1; width: 100%;">
-    </div>
+    <img src="../asset/island-polos.svg" alt="land" style="position: absolute; bottom: 0; width: 90%;">
+    <h1>ni hao</h1>
 </body>
 
 <style>
@@ -25,7 +20,7 @@
         background: url('{{ asset('asset/bckg.svg') }}');
         background-repeat: no-repeat;
         background-size: cover;
-        height: 100vh;
+        height: 100%;
         width: 100%;
         display: flex;
         justify-content: center;
