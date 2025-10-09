@@ -1,0 +1,53 @@
+@keyframes logoFloating {
+    0% {
+        transform: translate(-50%, -50%) translateY(0px);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-15px);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateY(0px);
+    }
+}
+
+@keyframes cloudFloating {
+    0% {
+        transform: translate(-50%, -50%) translateY(0px);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(30px);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateY(0px);
+    }
+}
+
+@keyframes textFloating {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-15px);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+}
+
+.floating-logo {
+    animation: logoFloating 5s ease-in-out infinite;
+}
+
+.floating-cloud {
+    animation: cloudFloating 3s ease-in-out infinite;
+}
+
+.floating-text {
+    animation: textFloating 5s ease-in-out infinite;
+}
