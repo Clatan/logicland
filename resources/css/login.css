@@ -89,7 +89,7 @@ form {
 
 .login-input:focus {
     outline: none;
-    border: 1px solid #61493D;
+    border: 2px solid #61493D;
     /* border-color: #A67C52;
     box-shadow: 0 0 5px rgba(166, 124, 82, 0.5); */
 }
@@ -133,7 +133,7 @@ form {
 }
 
 .signup-link a {
-    color: #A67C52; /* warna coklat muda, ganti sesuai keinginan */
+    color: #A67C52;
     text-decoration: underline;
     margin-left: 5px;
     font-weight: bold;

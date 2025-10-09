@@ -1,0 +1,11 @@
+#mapWrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  cursor: grab;
+}
+
+#map {
+  width: 3072px;
+  height: 4096px;
+}

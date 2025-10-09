@@ -31,4 +31,23 @@ class PageController extends Controller
         return view('home');
     }
 
+    public function beginner()
+    {
+        return view('beginner');
+    }
+    
+    public function elementary()
+    {
+        return view('elementary');
+    }
+
+    public function intermediate()
+    {
+        return view('intermediate');
+    }
+
+    public function advance()
+    {
+        return view('advance');
+    }
 }
