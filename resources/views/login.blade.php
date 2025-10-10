@@ -11,10 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
     @vite('resources/css/login.css')
+      @vite('resources/css/app.css')
 </head>
 
 <body>
-    <img src="../asset/island-polos.svg" alt="land" style="position: absolute; bottom: -50px; width: 90%;">
+    <img src="{{ asset('asset/island-polos-full.svg') }}" alt="land" style="position: absolute; bottom: -50px; width: 90%;">
     <div class="login-box">
         <img src="{{ asset('asset/bckg-login.svg') }}" alt="button-stand-login" class="button-stand-login">
         <a href="\welcome" class="button-cancel"></a>
@@ -40,11 +41,11 @@
 </body>
 
 <style>
-    body {
+  body {
         background: url('{{ asset('asset/bckg.svg') }}');
         background-repeat: no-repeat;
         background-size: cover;
-        height: 100%;
+        height: 110vh;
         width: 100%;
         display: flex;
         justify-content: center;

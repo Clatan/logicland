@@ -1,46 +1,135 @@
 .button-stand-about {
-    scale: 65%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -120px;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-22%, -26%);
+    width: 100%;
+    z-index: 2;
+    scale: 220%;
 }
 
 .button-cancel {
     background-image: url('../asset/cancel-big.svg');
     position: absolute;
-    top: 20px;      
-    right: 20px;    
-    width: 84px;    
+    top: 20px;
+    right: 20px;
+    width: 84px;
     height: 84px;
     scale: 80%;
-    z-index: 20;    
+    z-index: 20;
     /* cursor: pointer; */
 }
 
 .button-cancel:hover {
     background-image: url('../asset/cancel-big-hover.svg');
     position: absolute;
-    top: 20px;      
-    right: 20px;    
-    width: 84px;    
+    top: 20px;
+    right: 20px;
+    width: 84px;
     height: 84px;
     scale: 80%;
-    z-index: 20;   
+    z-index: 20;
     cursor: pointer;
 }
 
 .about-title {
     position: absolute;
-    top: 28%;        
-    left: 50%;        
-    transform: translate(-50%, -50%);
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    white-space: nowrap;
     color: #FFF;
     text-align: center;
     text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Jolly Lodger";
-    font-size: 90px;
+    font-size: 80px;
     font-weight: 250;
     z-index: 10;
-    margin: 0;
+}
+
+.about-caption {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-48%, 10%);
+    white-space: nowrap;
+    color: #FFF;
+    text-align: center;
+    text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Jolly Lodger";
+    font-size: 28px;
+    font-weight: 200;
+    z-index: 10;
+}
+
+@media (max-width: 1200px) {
+    .button-stand-about {
+        top: 44%;
+    }
+
+    .about-title {
+        font-size: clamp(70px, 8vw, 100px);
+        top: 25%;
+    }
+
+    .about-caption {
+        font-size: clamp(24px, 3vw, 22px);
+        top: 25%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .button-stand-about {
+        top: 40%;
+    }
+
+    .about-title {
+        font-size: clamp(60px, 8vw, 100px);
+        top: 22%;
+    }
+
+    .about-caption {
+        font-size: clamp(20px, 3vw, 22px);
+        top: 20%;
+    }
+}
+
+@media (max-width: 992px) {
+    .button-stand-about {
+        top: 33%;
+    }
+
+    .about-title {
+        font-size: clamp(50px, 8vw, 100px);
+        top: 15%;
+    }
+
+    .about-caption {
+        font-size: clamp(16px, 2vw, 24px);
+        top: 15%;
+    }
+}
+
+@media (max-width: 768px) {
+    .button-stand-about {
+        top: 28%;
+    }
+
+    .about-title {
+        font-size: clamp(36px, 8vw, 100px);
+        top: 10%;
+    }
+
+    .about-caption {
+        font-size: clamp(10px, 2vw, 24px);
+        top: 10%;
+    }
+
+    .button-cancel {
+    
+    }
+
+    .button-cancel:hover {
+       
+    }
 }

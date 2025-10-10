@@ -46,7 +46,7 @@
     width: 100%;
 }
 
-.start-button{
+.start-button {
     position: relative;
     margin-right: 80px;
     display: block;
@@ -67,20 +67,22 @@
 .island {
     position: absolute;
     bottom: 0;
+    top: 63%;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    z-index: 0; 
+    z-index: 0;
 }
 
 .main-container {
     position: relative;
     width: 30%;
-    padding-top: 50%; 
+    padding-top: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 6; /* di atas island */
+    z-index: 6;
+    /* di atas island */
 }
 
 .button-stand {
@@ -131,8 +133,120 @@
 }
 
 .login-button:hover {
-    background-image: url('../asset/login-hover.svg');   
+    background-image: url('../asset/login-hover.svg');
     scale: 279%;
     top: 40%;
     left: 32%;
+}
+
+/* responsive */
+
+@media (max-width: 1200px) {
+    .island {
+        top: 60%;
+        width: 100%;
+    }
+
+    .button-stand{
+        top: 44%;
+    }
+
+    .about-button {
+        top:17%;
+    }
+
+    .login-button {
+        top: 36%;
+    }
+
+    .login-button:hover{
+        top: 36%;
+    }
+
+    .about-button:hover{
+        top: 17%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .island {
+        top: 55%;
+        width: 100%;
+    }
+
+    .button-stand{
+        top: 37%;
+    }
+
+    .about-button {
+        top:10%;
+    }
+
+    .login-button {
+        top: 29%;
+    }
+
+    .login-button:hover{
+        top: 29%;
+    }
+
+    .about-button:hover{
+        top: 10%;
+    }
+}
+
+@media (max-width: 992px) {
+    .island {
+        top: 52%;
+        width: 100%;
+    }
+
+    .button-stand {
+        top: 32%;
+        width: 100%;
+    }
+
+    .about-button {
+        top: 5%;
+    }
+
+    .login-button {
+        top: 24%;
+    }
+
+    .login-button:hover{
+        top: 24%;
+    }
+
+    .about-button:hover{
+        top: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .island {
+        top: 50%;
+        width: 100%;
+    }
+
+    .button-stand {
+        top: 27%;
+        width: 100%;
+    }
+
+    .about-button {
+        top: 0%;
+    }
+
+    .login-button {
+        top: 19%;
+    }
+
+    .login-button:hover{
+        top: 19%;
+    }
+
+    .about-button:hover{
+        top: 0%;
+    }
 }

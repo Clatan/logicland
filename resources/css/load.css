@@ -40,14 +40,73 @@
     }
 }
 
-.floating-logo {
+/* responsive part */
+
+.logoLogic {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 55%;
     animation: logoFloating 5s ease-in-out infinite;
 }
 
-.floating-cloud {
+.cloudLoad {
+    position: fixed;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: 100%;
     animation: cloudFloating 3s ease-in-out infinite;
 }
 
-.floating-text {
+.textLoad {
     animation: textFloating 5s ease-in-out infinite;
+}
+
+@media (max-width: 1200px) {
+    .cloudLoad{
+        width: 120%;
+        top: 65%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .logoLogic {
+        width: 56%;
+        top: 46%;
+    }
+
+    .cloudLoad{
+        width: 115%;
+        top: 68%;
+    }
+}
+
+@media (max-width: 992px){
+    .cloudLoad{
+        width: 110%;
+        top: 70%;
+    }
+}
+
+@media (max-width: 900px) {
+    .cloudLoad{
+        width: 105%;
+        top: 76%;
+    }
+}
+
+@media (max-width: 768px) {
+    .logoLogic {
+        width: 65%;
+        top: 45%;
+    }
+
+    .cloudLoad{
+        width: 100%;
+        top: 83%;
+    }
 }

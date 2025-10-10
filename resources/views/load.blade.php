@@ -21,12 +21,10 @@
 
     <div class="centered-container">
         <a href="{{ url('/welcome') }}" class="start-button">
-            <h1 class="text-overlay floating-text">Start</h1>
+            <h1 class="text-overlay textLoad">Start</h1>
         </a>
-        <img class="floating-logo" src="{{ asset('asset/logo.svg') }}" alt="Logic Land"
-            style="position:absolute; top: 47%; left: 50%; transform: translate(-50%, -50%); z-index: 5; width: 45%;">
-        <img class= "floating-cloud" src="{{ asset('asset/cloud.svg') }}" alt="cloud"
-            style="position:absolute; top: 54%; ;left: 50%; transform: translate(-50%, -50%); z-index: 1; width: 100%;">
+        <img class="logoLogic" src="{{ asset('asset/logo.svg') }}" alt="Logic Land">
+        <img class= "cloudLoad" src="{{ asset('asset/cloud.svg') }}" alt="cloud">
     </div>
 
     <script>
