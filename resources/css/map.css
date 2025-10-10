@@ -1,11 +1,59 @@
-#mapWrapper {
-  width: 100vw;
-  height: 100vh;
-  overflow: scroll;
-  cursor: grab;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 40px;
+    z-index: 1000;
 }
 
-#map {
-  width: 3072px;
-  height: 4096px;
+.navbarback{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.navbar-left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar-left img {
+    width: 50px;
+}
+
+.navbar-center {
+  margin: auto;
+}
+
+.navbar-right img {
+    width: 50px;
+    cursor: pointer;
+}
+
+.text-overlay {
+    color: #FFF;
+    text-align: center;
+    text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Jolly Lodger";
+    font-size: 72px;
+    font-weight: 250;
+    z-index: 10;
+}
+
+.button-back {
+    width: 65px;    
+    height: 64px;
+    scale: 100%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

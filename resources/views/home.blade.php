@@ -35,27 +35,23 @@
     <div>
         <a href="{{ url('/beginner') }}">
             <img src="{{ asset('asset/island-spring.svg') }}" alt="Beginner" class="island-container top-left">
-            <h2 class="text-overlay beginner">Beginner</h2>
         </a>
 
         <a href="{{ url('/elementary') }}">
             <img src="{{ asset('asset/island-summer.svg') }}" alt="Elementary" class="island-container top-right">
-            <h2 class="text-overlay elementary">Elementary</h2>
         </a>
 
         <a href="{{ url('/intermediate') }}">
             <img src="{{ asset('asset/island-autumn.svg') }}" alt="Intermediate" class="island-container bottom-left">
-            <h2 class="text-overlay intermediate">Intermediate</h2>
         </a>
 
         <a href="{{ url('/advance') }}">
             <img src="{{ asset('asset/island-winter.svg') }}" alt="Advance" class="island-container bottom-right">
-            <h2 class="text-overlay advance">Advance</h2>
         </a>
     </div>
         
     <img src="{{ asset('asset/bridge-1.svg') }}" alt="road" style="position: fixed; top: 195px; left: 500px; width: 270px;">
-    <img src="{{ asset('asset/bridge-2.svg') }}" alt="road" style="position: fixed; bottom: 250px; right: 600px; width: 220px;">
+    <img src="{{ asset('asset/bridge-2.svg') }}" alt="road" style="position: fixed; bottom: 250px; right: 620px; width: 220px;">
     <img src="{{ asset('asset/bridge-3.svg') }}" alt="road" style="position: fixed; bottom: 170px; right: 510px; width: 200px; transform: rotate(-8deg);">
 
     <script>

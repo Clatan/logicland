@@ -20,38 +20,31 @@
         <h1 class="signup-title">Register Acc</h1>
         <form action="/signup-post" method="POST">
             @csrf
-            <input type="email" name="email" class="signup-input" placeholder="Enter your email" required>
-            @error('email')
-                <div class="error-message">
-                    {{ $message }}
+            <div class="input-group">
+                <input type="email" name="email" class="signup-input" placeholder="Enter your email" required autocomplete="off">
+                <div class="error-message {{ $errors->has('email') ? 'show' : '' }}">
+                    {{ $errors->first('email') }}
                 </div>
-            @enderror
-            <input type="username" name="username" class="signup-input" placeholder="Enter your username" required>
-            @error('username')
-                <div class="error-message">
-                    {{ $message }}
+            </div>
+            <div class="input-group">
+                <input type="text" name="username" class="signup-input" placeholder="Enter your username" required autocomplete="off">
+                <div class="error-message {{ $errors->has('username') ? 'show' : '' }}">
+                    {{ $errors->first('username') }}
                 </div>
-            @enderror
-            <input type="password" name="password" class="signup-input" placeholder="Enter your password" required>
-            @error('password')
-                <div class="error-message">
-                    {{ $message }}
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" class="signup-input" placeholder="Enter your password" required>
+                <div class="error-message {{ $errors->has('password') ? 'show' : '' }}">
+                    {{ $errors->first('password') }}
                 </div>
-            @enderror
-            
-            @if (session('error'))
-                <div class="error-message-center">{{ session('error') }}</div>
-            @endif
-
-            @if (session('success'))
-                <div class="success-message">{{ session('success') }}</div>
-            @endif
+            </div>
 
             <button type="submit" class="signup-button">Register</button>
+                
         </form>
-        <div class="login-link">
-        Already have an account?
-        <a href="/login">Login</a>
+            <div class="login-link">
+            Already have an account?
+            <a href="/login">Login</a>
     </div>
     </div>
 </body>

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* vertikal tengah jika tinggi cukup */
+    justify-content: center;
     position: relative;
 }
 
@@ -23,7 +23,6 @@
     height: 64px;
     scale: 80%;
     z-index: 20;    
-    /* cursor: pointer; */
 }
 
 .button-cancel:hover {
@@ -59,8 +58,6 @@ form {
     align-items: center;
     margin-top: 20px;
     z-index: 10;
-    /* gap: 10px; */
-    
 }
 
 .login-input {
@@ -76,33 +73,32 @@ form {
     z-index: 10;
     font-family: 'Nunito', sans-serif;
     font-weight: 900;
-    /* gap: 1px; */
 }
 
 .login-input:first-child {
-    margin-bottom: 5px; /* jarak bawah username */
+    margin-bottom: 5px; 
+    background: transparent;
 }
 
 .login-input[type="password"] {
-    margin-bottom: 5px; /* jarak bawah password */
+    margin-bottom: 5px; 
 }
 
 .login-input:focus {
     outline: none;
     border: 2px solid #61493D;
-    /* border-color: #A67C52;
-    box-shadow: 0 0 5px rgba(166, 124, 82, 0.5); */
+    background: transparent;
 }
 
 .error-message {
-    color: #e74c3c; /* Warna merah yang lebih standar */
+    color: #e74c3c;
     text-align: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito';
     font-size: 14px;
     font-weight: 900;
-    width: 250px; /* Lebar sama dengan input */
-    margin-top: -5px; /* Sedikit naik agar dekat dengan password */
-    margin-bottom: 10px; /* Jarak dengan tombol Login */
+    width: 250px;
+    margin-top: -5px; 
+    margin-bottom: 10px; 
     z-index: 10;
 }
 
@@ -115,7 +111,7 @@ form {
     padding: 7px 20px;
     font-size: 16px;
     cursor: pointer;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito';
     font-style: bold;
     font-weight: 900;
     transition: background-color 0.3s ease;
@@ -128,7 +124,7 @@ form {
     text-align: center;
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
-    margin-top: 15px;
+    margin-top: 10px;
     z-index: 10;
 }
 

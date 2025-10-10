@@ -23,7 +23,7 @@
 
         <form action="/login-post" method="POST">
             @csrf
-            <input type="text" name="username" class="login-input" placeholder="Enter your username" required>
+            <input type="text" name="username" class="login-input" placeholder="Enter your username" required autocomplete="off">
             <input type="password" name="password" class="login-input" placeholder="Enter your password" required>
             @if (session('error'))
                 <div class="error-message" style="color: red; text-align: center; margin-bottom: 5px; font-weight: bold; z-index: 10;">

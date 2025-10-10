@@ -15,26 +15,6 @@
     transform: scale(1.05);
 }
 
-.beginner {
-    top: 145px;
-    left: 250px;
-}
-
-.elementary {
-    top: 175px;
-    left: 820px;
-}
-
-.intermediate {
-    bottom: 110px;
-    left: 470px;
-}
-
-.advance {
-    bottom: 75px;
-    left: 1050px;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;

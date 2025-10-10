@@ -58,8 +58,12 @@ form {
     align-items: center;
     margin-top: 20px;
     z-index: 10;
-    /* gap: 10px; */
-    
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .signup-input {
@@ -67,34 +71,23 @@ form {
     color: rgba(84, 79, 76, 0.75);
     position: relative;
     width: 250px;
-    padding: 10px;
     margin: 5px 0;
+    padding: 10px;
     border: 1px solid #61493D;
     border-radius: 5px;
     font-size: 15px;
     z-index: 10;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito';
     font-weight: 900;
-    /* gap: 1px; */
 }
 
 .signup-input:first-child {
     margin-bottom: 5px; 
 }
 
-.signup-input:nth-child(2) {
-    margin-bottom: 5px; 
-}
-
-.signup-input[type="password"] {
-    margin-bottom: 5px; /* jarak bawah password */
-}
-
 .signup-input:focus {
     outline: none;
     border: 2px solid #61493D;
-    /* border-color: #A67C52;
-    box-shadow: 0 0 5px rgba(166, 124, 82, 0.5); */
 }
 
 .signup-button {
@@ -106,7 +99,7 @@ form {
     padding: 7px 20px;
     font-size: 16px;
     cursor: pointer;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito';
     font-style: bold;
     font-weight: 900;
     position: relative;
@@ -116,47 +109,30 @@ form {
     z-index: 10;
 }
 
-.error-message-center {
-    color: #e74c3c;
-    text-align: center;
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
-    font-weight: 900;
-    width: 250px;
-    margin-top: -5px;
-    margin-bottom: 5px; 
-    z-index: 10;
-}
-
 .error-message {
     color: #e74c3c;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito';
     font-size: 14px;
     font-weight: 900;
     width: 250px;
-    margin-top: -5px;
+    height: 15px;
+    margin-top: -5px ;
     z-index: 10;
+    visibility: hidden;
 }
 
-.success-message {
-    color: #42e73c;
-    text-align: center;
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
-    font-weight: 900;
-    width: 250px;
-    margin-top: -5px;
-    margin-bottom: 5px; 
-    z-index: 10;
+.error-message.show {
+    visibility: visible;
 }
 
 .login-link {
     color: #61493D;
+    position: relative;
     text-align: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito';
     font-size: 14px;
-    margin-top: 15px;
     z-index: 10;
+    margin-top: 15px;
 }
 
 .login-link a {
