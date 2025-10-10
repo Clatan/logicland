@@ -1,8 +1,61 @@
 <svg width="212" height="272" viewBox="0 0 212 272" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_295_116" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="212" height="211">
+<mask id="mask0_298_180" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="153" y="145" width="46" height="52">
+<path d="M153.256 145.333H198.287V196.818H153.256V145.333Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_298_180)">
+<mask id="mask1_298_180" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="153" y="145" width="46" height="52">
+<path d="M153.256 171.089L198.287 145.354V196.818L153.256 171.089Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_298_180)">
+<mask id="mask2_298_180" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="152" y="145" width="47" height="53">
+<path d="M199.001 145.333H152.334V197.333H199.001V145.333Z" fill="white"/>
+</mask>
+<g mask="url(#mask2_298_180)">
+<mask id="mask3_298_180" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="153" y="145" width="46" height="52">
+<path d="M153.256 145.333H198.287V196.818H153.256V145.333Z" fill="white"/>
+</mask>
+<g mask="url(#mask3_298_180)">
+<mask id="mask4_298_180" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="153" y="145" width="46" height="52">
+<path d="M153.256 171.089L198.287 145.354V196.818L153.256 171.089Z" fill="white"/>
+</mask>
+<g mask="url(#mask4_298_180)">
+<path d="M153.256 196.818V145.282H198.287V196.818H153.256Z" fill="black"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<mask id="mask5_298_180" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="154" y="10" width="46" height="46">
+<path d="M154.271 10.8022H199.271V55.8022H154.271V10.8022Z" fill="white"/>
+</mask>
+<g mask="url(#mask5_298_180)">
+<mask id="mask6_298_180" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="154" y="10" width="46" height="46">
+<path d="M176.761 55.8022C189.193 55.8022 199.271 45.7241 199.271 33.2918C199.271 20.8647 189.193 10.7866 176.761 10.7866C164.334 10.7866 154.256 20.8647 154.256 33.2918C154.256 45.7241 164.334 55.8022 176.761 55.8022Z" fill="white"/>
+</mask>
+<g mask="url(#mask6_298_180)">
+<path d="M176.761 55.8022C189.193 55.8022 199.271 45.7241 199.271 33.2918C199.271 20.8647 189.193 10.7866 176.761 10.7866C164.334 10.7866 154.256 20.8647 154.256 33.2918C154.256 45.7241 164.334 55.8022 176.761 55.8022Z" stroke="black" stroke-width="8"/>
+</g>
+</g>
+<mask id="mask7_298_180" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="13" y="12" width="46" height="46">
+<path d="M13.709 12.2866H58.7402V57.3179H13.709V12.2866Z" fill="white"/>
+</mask>
+<g mask="url(#mask7_298_180)">
+<mask id="mask8_298_180" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="13" y="12" width="47" height="46">
+<path d="M59.0013 12H13.668V57.3333H59.0013V12Z" fill="white"/>
+</mask>
+<g mask="url(#mask8_298_180)">
+<mask id="mask9_298_180" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="13" y="12" width="46" height="46">
+<path d="M13.709 12.2866H58.7402V57.3179H13.709V12.2866Z" fill="white"/>
+</mask>
+<g mask="url(#mask9_298_180)">
+<path d="M58.7402 57.3179H13.709V12.2866H58.7402V57.3179Z" fill="black"/>
+</g>
+</g>
+</g>
+<mask id="mask10_298_180" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="212" height="211">
 <path d="M0.546875 0H211.422V210.875H0.546875V0Z" fill="white"/>
 </mask>
-<g mask="url(#mask0_295_116)">
+<g mask="url(#mask10_298_180)">
 <path d="M211.422 210.875H0.546875V0H211.422V210.875Z" stroke="black" stroke-width="12"/>
 </g>
 <path d="M124.071 255.842C124.287 256.31 124.395 256.778 124.395 257.246C124.395 258.074 124.053 258.776 123.369 259.352C122.721 259.928 121.965 260.216 121.101 260.216C120.525 260.216 119.985 260.072 119.481 259.784C118.977 259.46 118.581 258.974 118.293 258.326L115.053 251.09H96.0449L92.8049 258.326C92.5169 258.974 92.1209 259.46 91.6169 259.784C91.1129 260.072 90.5549 260.216 89.9429 260.216C89.1149 260.216 88.3589 259.928 87.6749 259.352C86.9909 258.776 86.6489 258.074 86.6489 257.246C86.6489 256.778 86.7569 256.31 86.9729 255.842L101.877 223.82C102.201 223.1 102.687 222.56 103.335 222.2C104.019 221.804 104.739 221.606 105.495 221.606C106.251 221.606 106.953 221.804 107.601 222.2C108.285 222.56 108.789 223.1 109.113 223.82L124.071 255.842ZM98.4209 245.69H112.677L105.549 229.652L98.4209 245.69Z" fill="black"/>

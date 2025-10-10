@@ -1,8 +1,61 @@
 <svg width="212" height="271" viewBox="0 0 212 271" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_295_113" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="212" height="211">
+<mask id="mask0_298_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="153" y="145" width="46" height="52">
+<path d="M153.307 145.333H198.338V196.823H153.307V145.333Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_298_183)">
+<mask id="mask1_298_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="153" y="145" width="46" height="52">
+<path d="M153.307 171.094L198.338 145.359V196.823L153.307 171.094Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_298_183)">
+<mask id="mask2_298_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="152" y="145" width="47" height="53">
+<path d="M198.999 145.333H152.332V197.333H198.999V145.333Z" fill="white"/>
+</mask>
+<g mask="url(#mask2_298_183)">
+<mask id="mask3_298_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="153" y="145" width="46" height="52">
+<path d="M153.307 145.333H198.338V196.823H153.307V145.333Z" fill="white"/>
+</mask>
+<g mask="url(#mask3_298_183)">
+<mask id="mask4_298_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="153" y="145" width="46" height="52">
+<path d="M153.307 171.094L198.338 145.359V196.823L153.307 171.094Z" fill="white"/>
+</mask>
+<g mask="url(#mask4_298_183)">
+<path d="M153.307 196.823V145.287H198.338V196.823H153.307Z" fill="black"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<mask id="mask5_298_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="154" y="10" width="46" height="46">
+<path d="M154.322 10.8071H199.322V55.8071H154.322V10.8071Z" fill="white"/>
+</mask>
+<g mask="url(#mask5_298_183)">
+<mask id="mask6_298_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="154" y="10" width="46" height="46">
+<path d="M176.817 55.8071C189.244 55.8071 199.322 45.729 199.322 33.2967C199.322 20.8644 189.244 10.7915 176.817 10.7915C164.385 10.7915 154.307 20.8644 154.307 33.2967C154.307 45.729 164.385 55.8071 176.817 55.8071Z" fill="white"/>
+</mask>
+<g mask="url(#mask6_298_183)">
+<path d="M176.817 55.8071C189.244 55.8071 199.322 45.729 199.322 33.2967C199.322 20.8644 189.244 10.7915 176.817 10.7915C164.385 10.7915 154.307 20.8644 154.307 33.2967C154.307 45.729 164.385 55.8071 176.817 55.8071Z" stroke="black" stroke-width="8"/>
+</g>
+</g>
+<mask id="mask7_298_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="13" y="151" width="46" height="46">
+<path d="M13.7656 151.792H58.7969V196.823H13.7656V151.792Z" fill="white"/>
+</mask>
+<g mask="url(#mask7_298_183)">
+<mask id="mask8_298_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="13" y="150" width="46" height="48">
+<path d="M58.9994 150.667H13.666V197.333H58.9994V150.667Z" fill="white"/>
+</mask>
+<g mask="url(#mask8_298_183)">
+<mask id="mask9_298_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="13" y="151" width="46" height="46">
+<path d="M13.7656 151.792H58.7969V196.823H13.7656V151.792Z" fill="white"/>
+</mask>
+<g mask="url(#mask9_298_183)">
+<path d="M58.7969 196.823H13.7656V151.792H58.7969V196.823Z" fill="black"/>
+</g>
+</g>
+</g>
+<mask id="mask10_298_183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="212" height="211">
 <path d="M0.599609 0H211.475V210.875H0.599609V0Z" fill="white"/>
 </mask>
-<g mask="url(#mask0_295_113)">
+<g mask="url(#mask10_298_183)">
 <path d="M211.475 210.875H0.599609V0H211.475V210.875Z" stroke="black" stroke-width="12"/>
 </g>
 <path d="M92.5965 259C91.5525 259 90.7245 258.712 90.1125 258.136C89.5365 257.56 89.2485 256.75 89.2485 255.706V224.224C89.2485 223.18 89.5365 222.37 90.1125 221.794C90.7245 221.218 91.5525 220.93 92.5965 220.93H103.289C109.517 220.93 114.341 222.604 117.761 225.952C121.217 229.264 122.945 233.926 122.945 239.938C122.945 245.986 121.217 250.684 117.761 254.032C114.341 257.344 109.517 259 103.289 259H92.5965ZM102.857 253.33C111.605 253.33 115.979 248.866 115.979 239.938C115.979 231.046 111.605 226.6 102.857 226.6H96.2145V253.33H102.857Z" fill="black"/>
