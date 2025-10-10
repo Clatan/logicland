@@ -1,18 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'About LogicLand')
+@section('title', 'Welcome to LogicLand')
 
 @section('custom-css')
-@vite(['resources/css/about.css'])
+@vite(['resources/css/app.css'])
 @endsection
 
 @section('content')
-<img src="../asset/island-polos.svg" alt="land" style="position: absolute; bottom: -50px; width: 90%;">
 
-<div class="main-container">
-    <img src="{{ asset('asset/bckg-about.svg') }}" alt="button-stand-about" class="button-stand-about">
-    <h1 class="about-title">About LogicLand</h1>
-</div>
+<a href="\home" class="button-cancel"></a>
 
 <style>
     body {
