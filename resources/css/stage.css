@@ -1,0 +1,56 @@
+h2 {
+    color: #FFF;
+    text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Jolly Lodger";
+    font-size: 60px;
+    font-weight: 250;
+    line-height: normal;
+
+    position: fixed;       /* tetap di atas viewport */
+    top: 20px;             /* jarak dari atas layar */
+    left: 50%;             /* tengah horizontal */
+    transform: translateX(-50%); /* benar-benar center */
+    text-align: center;
+    z-index: 1000;         /* di atas elemen lain */
+    margin: 0;             /* hapus margin default */
+}
+
+.question-container {
+    text-align: center;
+    padding: 30px; 
+    background-color: rgba(255, 255, 255, 0.7); 
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+    .question-container {
+        width: 95%;       /* hampir full width di HP */
+        padding: 20px;    /* padding dikurangi agar muat */
+        border-radius: 15px;
+    }
+}
+
+.question-img {
+    max-width: 100%;
+    height: auto; /* agar otomatis menyesuaikan ukuran gambar */
+}
+
+.answer-container {
+    display: grid;
+    grid-gap: 50px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.answer-img {
+    border: 5px solid transparent;
+    border-radius: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.answer-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 5px solid #C4D8E4;
+}

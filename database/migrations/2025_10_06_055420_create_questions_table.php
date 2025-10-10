@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id('question_id');
             $table->string('question_detail');                // Image URL
-            $table->enum('question_answer', ['A', 'B', 'C']);
+            $table->enum('question_answer', ['A', 'B', 'C', 'D']);
             $table->timestamps();
         });
     }
