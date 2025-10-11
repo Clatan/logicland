@@ -1,3 +1,18 @@
+@extends('layouts.app')
+
+@section('title', 'About LogicLand')
+
+@section('custom-css')
+@vite(['resources/css/about.css'])
+@endsection
+
+@section('content')
+<img src="../asset/island-polos.svg" alt="land" style="position: absolute; bottom: -50px; width: 90%;">
+
+<div class="main-container">
+    <img src="{{ asset('asset/bckg-about.svg') }}" alt="button-stand-about" class="button-stand-about">
+    <h1 class="about-title">About LogicLand</h1>
+</div>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,5 +58,7 @@
         overflow: hidden;
     }
 </style>
+
+@endsection
 
 </html>

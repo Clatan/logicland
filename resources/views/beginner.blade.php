@@ -44,23 +44,23 @@
         </div>
     </div>
 
-    <a href="{{ url('/beginner/stage1') }}">
+    <a href="{{ url('/beginner/stage1/1') }}">
       <img src="{{ asset('asset/map-spring/spring1.svg') }}" alt="stage" style="position: absolute; top: 400px; left: 100px;">
     </a>
 
-    <a href="{{ url('/beginner/stage2') }}">
+    <a href="{{ url('/beginner/stage2/2') }}">
       <img src="{{ asset('asset/map-spring/spring2.svg') }}" alt="stage" style="position: absolute; top: 355px; left: 430px;">
     </a>
 
-    <a href="{{ url('/beginner/stage3') }}">
+    <a href="{{ url('/beginner/stage3/3') }}">
       <img src="{{ asset('asset/map-spring/spring3.svg') }}" alt="stage" style="position: absolute; top: 500px; left: 700px;">
     </a>
 
-    <a href="{{ url('/beginner/stage4') }}">
+    <a href="{{ url('/beginner/stage4/4') }}">
       <img src="{{ asset('asset/map-spring/spring4.svg') }}" alt="stage" style="position: absolute; bottom: -260px; right: 430px;">
     </a>
 
-    <a href="{{ url('/beginner/stage5') }}">
+    <a href="{{ url('/beginner/stage5/5') }}">
       <img src="{{ asset('asset/map-spring/spring5.svg') }}" alt="stage" style="position: absolute; bottom: -340px; right: 100px;">
     </a>
 

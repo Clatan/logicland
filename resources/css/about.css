@@ -1,3 +1,13 @@
+.main-container {
+    position: relative;
+    width: 30%;
+    padding-top: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+}
+
 .button-stand-about {
     position: absolute;
     top: 48%;
