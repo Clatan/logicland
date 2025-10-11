@@ -10,10 +10,6 @@
 
     <div class="navbar">
         <div class="navbar-left">
-            {{-- @php
-                $attempts = session('attempt_remaining', 0);
-            @endphp --}}
-
             @php
                 $attempts = session('attempt_remaining', 0); // default 0 kalau nggak ada
             @endphp
@@ -23,23 +19,22 @@
             @endfor
         </div>
 
+        <div class="navbar-center">
+            <img src="{{ asset('asset/logo-title.svg') }}" alt="logicland">
+        </div>
 
-    <div class="navbar-center">
-        <img src="{{ asset('asset/logo-title.svg') }}" alt="logicland">
+        <div class="navbar-right">
+            <img id="audio-icon" src="{{ asset('asset/audio-on.svg') }}" alt="audio">
+            <a href="/setting" data-no-spa>
+                <img id="setting-btn" src="{{ asset('asset/setting.svg') }}" alt="setting">
+            </a>
+        </div>
     </div>
 
-    <div class="navbar-right">
-        <img id="audio-icon" src="{{ asset('asset/audio-on.svg') }}" alt="audio">
-        <a href="/setting" data-no-spa>
-            <img id="setting-btn" src="{{ asset('asset/setting.svg') }}" alt="setting">
+    <div>
+        <a href="{{ url('/beginner') }}" data-no-spa>
+            <img src="{{ asset('asset/island-spring.svg') }} " alt="Beginner" class="island-container top-left">
         </a>
-    </div>
-</div>
-        
-<div>
-    <a href="{{ url('/beginner') }}" data-no-spa>
-        <img src="{{ asset('asset/island-spring.svg') }} " alt="Beginner" class="island-container top-left">
-    </a>
 
         <a href="{{ url('/elementary') }}" data-no-spa>
             <img src="{{ asset('asset/island-summer.svg') }}" alt="Elementary" class="island-container top-right">

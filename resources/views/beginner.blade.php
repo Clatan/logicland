@@ -18,9 +18,13 @@
             </div>
 
             <div class="navbar-left">
-                <img src="{{ asset('asset/life.svg') }}" alt="life" class="life">
-                <img src="{{ asset('asset/life.svg') }}" alt="life" class="life">
-                <img src="{{ asset('asset/life.svg') }}" alt="life" class="life">
+                @php
+                    $attempts = session('attempt_remaining', 0); // default 0 kalau nggak ada
+                @endphp
+
+                @for ($i = 0; $i < $attempts; $i++)
+                    <img src="{{ asset('asset/life.svg') }}" alt="life">
+                @endfor
             </div>
             <div class="navbar-center">
                 <p class="text-overlay">Beginner</p>

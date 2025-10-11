@@ -22,7 +22,7 @@ Route::middleware('web')->group(function () {
     Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
     
     Route::middleware('auth')->group(function () {
-        Route::get('/home', [PageController::class, 'home'])->name('home');
+        Route::get('/home', [PageController::class, 'home'])->name('home')->middleware('web');
         Route::get('/setting', [SettingController::class, 'index'])->name('setting');
         Route::post('/change-password', [SettingController::class,'updatePassword'])->name('password.update');
     });
