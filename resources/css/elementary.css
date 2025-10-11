@@ -1,31 +1,29 @@
-
-
 .stage1 {
     position: absolute;
-    top: 450px;
-    right: 100px;
+    bottom: -190px;
+    left: 100px;
 }
 
 .stage2 {
     position: absolute;
-    top: 380px;
-    right: 430px;
+    bottom: -120px;
+    left: 430px;
 }
 
 .stage3 {
     position: absolute;
     top: 500px;
-    left: 590px;
+    left: 620px;
 }
 
 .stage4 {
     position: absolute;
-    bottom: -260px;
-    left: 430px;
+    bottom: 250px;
+    right: 430px;
 }
 
 .stage5 {
     position: absolute;
-    bottom: -340px;
-    left: 100px;
+    bottom: 190px;
+    right: 100px;
 }

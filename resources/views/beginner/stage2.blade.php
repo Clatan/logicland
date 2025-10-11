@@ -1,47 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LogicLand</title>
-    <link rel="icon" type="svg+xml" href="{{ asset('asset/logo.svg') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
-    @vite('resources/css/stage.css')
-</head>
+@section('title', 'LogicLand')
 
-<body>
+@section('custom-css')
+    @vite(['resources/css/stage.css'])
+@endsection
+
+@section('content')
+
+    <div class="navbar">
+        <div class="navbarback">
+            <img src="{{ asset('asset/back.svg') }}" alt="Back Button" class="button-back"
+                onclick="window.location.href='{{ url('/beginner') }}'"
+                onmouseover="this.src='{{ asset('asset/back-hover.svg') }}'"
+                onmouseout="this.src='{{ asset('asset/back.svg') }}'">
+        </div>
+
+        <div class="navbar-left">
+            <img src="{{ asset('asset/life.svg') }}" alt="life">
+            <img src="{{ asset('asset/life.svg') }}" alt="life">
+            <img src="{{ asset('asset/life.svg') }}" alt="life">
+        </div>
+        <div class="navbar-center">
+            <P class="text-overlay">Stage {{ $question->question_id }}</P>
+        </div>
+        <div class="navbar-right">
+            <img id="audio-icon" src="{{ asset('asset/audio-on.svg') }}" alt="audio" onclick="toggleAudio()">
+            <img src="{{ asset('asset/setting.svg') }}" alt="setting">
+        </div>
+    </div>
+
     <div>
-        <h2>Stage {{ $question->question_id }}</h2>
-        <div class="question-container">
-            <img src="{{ asset('asset/beginner/' . $question->question_detail) }}" alt="Soal" width="600">
-            <div class="answer-container">
-                <form action="/submit-answer" method="POST">
+        <div class="question-container" style="justify-content: center; align-items: center;">
+            <img src="{{ asset('asset/beginner/' . $question->question_detail) }}" alt="Soal" width="600"
+                class="question-img">
+            <div >
+                <form action="/submit-answer" method="POST" class="answer-container">
                     @csrf
                     <input type="hidden" name="question_id" value="{{ $question->question_id }}">
 
-                    <div>
-                        <button type="submit" name="answer" value="A" style="border:none; background:none;" class="answer-btn btn-A">
-                            <img src="{{ asset('asset/beginner/stage2-A.svg') }}" width="300">
-                        </button>
+                    <button type="submit" name="answer" value="A" class="answer-btn btn-A">
+                        <img src="{{ asset('asset/beginner/stage2-A.svg') }}" width="300">
+                    </button>
 
-                        <button type="submit" name="answer" value="B" style="border:none; background:none;" class="answer-btn btn-B">
-                            <img src="{{ asset('asset/beginner/stage2-B.svg') }}" width="300">
-                        </button>
-                    </div>
+                    <button type="submit" name="answer" value="B" class="answer-btn btn-B">
+                        <img src="{{ asset('asset/beginner/stage2-B.svg') }}" width="300">
+                    </button>
 
-                    <div>
-                        <button type="submit" name="answer" value="C" style="border:none; background:none;" class="answer-btn btn-C">
-                            <img src="{{ asset('asset/beginner/stage2-C.svg') }}" width="300">
-                        </button>
+                    <button type="submit" name="answer" value="C" class="answer-btn btn-C">
+                        <img src="{{ asset('asset/beginner/stage2-C.svg') }}" width="300">
+                    </button>
 
-                        <button type="submit" name="answer" value="D" style="border:none; background:none;" class="answer-btn btn-D">
-                            <img src="{{ asset('asset/beginner/stage2-D.svg') }}" width="300">
-                        </button>
-                    </div>
-
+                    <button type="submit" name="answer" value="D" class="answer-btn btn-D">
+                        <img src="{{ asset('asset/beginner/stage2-D.svg') }}" width="300">
+                    </button>
                 </form>
 
             </div>
@@ -67,20 +79,23 @@
         @endif
 
     </div>
-</body>
 
-<style>
-    body {
-        background: url('{{ asset('asset/bckg.svg') }}');
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 110vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* overflow: hidden; */
-    }
-</style>
 
-</html>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #000;
+            background: url('{{ asset('asset/map-spring/bckg-spring.svg') }}') no-repeat top left;
+            overflow: hidden;
+            */
+        }
+    </style>
+
+@endsection

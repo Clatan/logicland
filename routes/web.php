@@ -22,7 +22,7 @@ Route::middleware('web')->group(function () {
     Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
     
     Route::middleware('auth')->group(function () {
-        Route::get('/home', [PageController::class, 'home'])->name('home');
+        Route::get('/home', [PageController::class, 'home'])->name('home')->middleware('web');
         Route::get('/setting', [SettingController::class, 'index'])->name('setting');
         Route::post('/change-password', [SettingController::class,'updatePassword'])->name('password.update');
     });
@@ -44,6 +44,27 @@ Route::get('/advance', [PageController::class, 'advance'])->name('advance');
 // Route untuk stage
 Route::get('/beginner/stage1/{id}', [QuestionController::class, 'show'])->name('stage1.show');
 Route::get('/beginner/stage2/{id}', [QuestionController::class, 'show'])->name('stage2.show');
+Route::get('/beginner/stage3/{id}', [QuestionController::class, 'show'])->name('stage3.show');
+Route::get('/beginner/stage4/{id}', [QuestionController::class, 'show'])->name('stage4.show');
+Route::get('/beginner/stage5/{id}', [QuestionController::class, 'show'])->name('stage5.show');
+
+Route::get('/elementary/stage1/{id}', [QuestionController::class, 'show'])->name('stage1.show');
+Route::get('/elementary/stage2/{id}', [QuestionController::class, 'show'])->name('stage2.show');
+Route::get('/elementary/stage3/{id}', [QuestionController::class, 'show'])->name('stage3.show');
+Route::get('/elementary/stage4/{id}', [QuestionController::class, 'show'])->name('stage4.show');
+Route::get('/elementary/stage5/{id}', [QuestionController::class, 'show'])->name('stage5.show');
+
+Route::get('/intermediate/stage1/{id}', [QuestionController::class, 'show'])->name('stage1.show');
+Route::get('/intermediate/stage2/{id}', [QuestionController::class, 'show'])->name('stage2.show');
+Route::get('/intermediate/stage3/{id}', [QuestionController::class, 'show'])->name('stage3.show');
+Route::get('/intermediate/stage4/{id}', [QuestionController::class, 'show'])->name('stage4.show');
+Route::get('/intermediate/stage5/{id}', [QuestionController::class, 'show'])->name('stage5.show');
+
+Route::get('/advance/stage1/{id}', [QuestionController::class, 'show'])->name('stage1.show');
+Route::get('/advance/stage2/{id}', [QuestionController::class, 'show'])->name('stage2.show');
+Route::get('/advance/stage3/{id}', [QuestionController::class, 'show'])->name('stage3.show');
+Route::get('/advance/stage4/{id}', [QuestionController::class, 'show'])->name('stage4.show');
+Route::get('/advance/stage5/{id}', [QuestionController::class, 'show'])->name('stage5.show');
 
 // Route untuk submit jawaban
 Route::post('/submit-answer', [QuestionController::class, 'submitAnswer'])->name('submit.answer');

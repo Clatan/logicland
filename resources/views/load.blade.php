@@ -13,7 +13,7 @@
 </audio>
 
 <div class="centered-container">
-    <a href="{{ url('/welcome') }}" class="start-button" data-no-spa>
+    <a id="start-bt" href="{{ url('/welcome') }}" class="start-button" data-no-spa>
         <h1 class="text-overlay textLoad">Start</h1>
     </a>
     <img class="logoLogic" src="{{ asset('asset/logo.svg') }}" alt="Logic Land">
