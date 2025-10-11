@@ -8,55 +8,55 @@
 @endsection
 
 @section('content')
-<div id= "main-content">
-  <div class="navbar">
-    <div class="navbarback">
-        <img 
-            src="{{ asset('asset/back.svg') }}" 
-            alt="Back Button" 
-            class="button-back"
-            onclick="window.location.href='{{ url('/home') }}'"
-            onmouseover="this.src='{{ asset('asset/back-hover.svg') }}'"
-            onmouseout="this.src='{{ asset('asset/back.svg') }}'"
-        >
-    </div>
-    <div class="navbar-left">
-        <img src="{{ asset('asset/life.svg') }}" alt="life">
-        <img src="{{ asset('asset/life.svg') }}" alt="life">
-        <img src="{{ asset('asset/life.svg') }}" alt="life">
-    </div>
-    <div class="navbar-center">
-        <p class="text-overlay">Elementary</p>
-    </div>
-    <div class="navbar-right">
-        <img id="audio-btn" src="{{ asset('asset/audio-on.svg') }}" alt="audio" onclick="toggleAudio()">
-        <img src="{{ asset('asset/setting.svg') }}" alt="setting">
-    </div>
-  </div>
+    <div id= "main-content">
+        <div class="navbar">
+            <div class="navbarback">
+                <img src="{{ asset('asset/back.svg') }}" alt="Back Button" class="button-back"
+                    onclick="window.location.href='{{ url('/home') }}'"
+                    onmouseover="this.src='{{ asset('asset/back-hover.svg') }}'"
+                    onmouseout="this.src='{{ asset('asset/back.svg') }}'">
+            </div>
+            <div class="navbar-left">
+                @php
+                    $attempts = session('attempt_remaining', 0); // default 0 kalau nggak ada
+                @endphp
 
-  <a href="{{ url('/elementary/stage1/1') }}" data-no-spa>
-    <img src="{{ asset('asset/map-summer/summer1.svg') }}" alt="stage" class="stage1 button-stage">
-  </a>
-  <a href="{{ url('/elementary/stage2/2') }}" data-no-spa>
-    <img src="{{ asset('asset/map-summer/summer2.svg') }}" alt="stage" class="stage2 button-stage">
-  </a>
-  <a href="{{ url('/elementary/stage3/3') }}" data-no-spa>
-    <img src="{{ asset('asset/map-summer/summer3.svg') }}" alt="stage" class="stage3 button-stage">
-  </a>
-  <a href="{{ url('/elementary/stage4/4') }}" data-no-spa>
-    <img src="{{ asset('asset/map-summer/summer4.svg') }}" alt="stage" class="stage4 button-stage">
-  </a>
-  <a href="{{ url('/elementary/stage5/5') }}" data-no-spa>
-    <img src="{{ asset('asset/map-summer/summer5.svg') }}" alt="stage" class="stage5 button-stage">
-  </a>
+                @for ($i = 0; $i < $attempts; $i++)
+                    <img src="{{ asset('asset/life.svg') }}" alt="life">
+                @endfor
+            </div>
+            <div class="navbar-center">
+                <p class="text-overlay">Elementary</p>
+            </div>
+            <div class="navbar-right">
+                <img id="audio-btn" src="{{ asset('asset/audio-on.svg') }}" alt="audio" onclick="toggleAudio()">
+                <img src="{{ asset('asset/setting.svg') }}" alt="setting">
+            </div>
+        </div>
 
-  <style>
-    body {
-      background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat top left;
-      background-size: 100% auto;
-      background-attachment: scroll;
-      height: 120vh;
-    }
-  </style>
-</div>
+        <a href="{{ url('/elementary/stage1/1') }}" data-no-spa>
+            <img src="{{ asset('asset/map-summer/summer1.svg') }}" alt="stage" class="stage1 button-stage">
+        </a>
+        <a href="{{ url('/elementary/stage2/2') }}" data-no-spa>
+            <img src="{{ asset('asset/map-summer/summer2.svg') }}" alt="stage" class="stage2 button-stage">
+        </a>
+        <a href="{{ url('/elementary/stage3/3') }}" data-no-spa>
+            <img src="{{ asset('asset/map-summer/summer3.svg') }}" alt="stage" class="stage3 button-stage">
+        </a>
+        <a href="{{ url('/elementary/stage4/4') }}" data-no-spa>
+            <img src="{{ asset('asset/map-summer/summer4.svg') }}" alt="stage" class="stage4 button-stage">
+        </a>
+        <a href="{{ url('/elementary/stage5/5') }}" data-no-spa>
+            <img src="{{ asset('asset/map-summer/summer5.svg') }}" alt="stage" class="stage5 button-stage">
+        </a>
+
+        <style>
+            body {
+                background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat top left;
+                background-size: 100% auto;
+                background-attachment: scroll;
+                height: 120vh;
+            }
+        </style>
+    </div>
 @endsection

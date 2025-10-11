@@ -10,10 +10,6 @@
 
     <div class="navbar">
         <div class="navbar-left">
-            {{-- @php
-                $attempts = session('attempt_remaining', 0);
-            @endphp --}}
-
             @php
                 $attempts = session('attempt_remaining', 0); // default 0 kalau nggak ada
             @endphp
@@ -23,10 +19,9 @@
             @endfor
         </div>
 
-
-    <div class="navbar-center">
-        <img src="{{ asset('asset/logo-title.svg') }}" alt="logicland">
-    </div>
+        <div class="navbar-center">
+            <img src="{{ asset('asset/logo-title.svg') }}" alt="logicland">
+        </div>
 
     <div class="navbar-right">
         <img id="audio-btn" src="{{ asset('asset/audio-on.svg') }}" alt="audio">
