@@ -29,33 +29,33 @@
                 <p class="text-overlay">Elementary</p>
             </div>
             <div class="navbar-right">
-                <img id="audio-icon" src="{{ asset('asset/audio-on.svg') }}" alt="audio" onclick="toggleAudio()">
+                <img id="audio-btn" src="{{ asset('asset/audio-on.svg') }}" alt="audio" onclick="toggleAudio()">
                 <img src="{{ asset('asset/setting.svg') }}" alt="setting">
             </div>
         </div>
 
-        <a href="{{ url('/elementary/stage1') }}" data-no-spa>
-            <img src="{{ asset('asset/map-summer/summer5.svg') }}" alt="stage" class="stage1">
+        <a href="{{ url('/elementary/stage1/1') }}" data-no-spa>
+            <img src="{{ asset('asset/map-summer/summer1.svg') }}" alt="stage" class="stage1 button-stage">
         </a>
-        <a href="{{ url('/elementary/stage2') }}" data-no-spa>
-            <img src="{{ asset('asset/map-summer/summer4.svg') }}" alt="stage" class="stage2">
+        <a href="{{ url('/elementary/stage2/2') }}" data-no-spa>
+            <img src="{{ asset('asset/map-summer/summer2.svg') }}" alt="stage" class="stage2 button-stage">
         </a>
-        <a href="{{ url('/elementary/stage3') }}" data-no-spa>
-            <img src="{{ asset('asset/map-summer/summer3.svg') }}" alt="stage" class="stage3">
+        <a href="{{ url('/elementary/stage3/3') }}" data-no-spa>
+            <img src="{{ asset('asset/map-summer/summer3.svg') }}" alt="stage" class="stage3 button-stage">
         </a>
-        <a href="{{ url('/elementary/stage4') }}" data-no-spa>
-            <img src="{{ asset('asset/map-summer/summer2.svg') }}" alt="stage" class="stage4">
+        <a href="{{ url('/elementary/stage4/4') }}" data-no-spa>
+            <img src="{{ asset('asset/map-summer/summer4.svg') }}" alt="stage" class="stage4 button-stage">
         </a>
-        <a href="{{ url('/elementary/stage5') }}" data-no-spa>
-            <img src="{{ asset('asset/map-summer/summer1.svg') }}" alt="stage" class="stage5">
+        <a href="{{ url('/elementary/stage5/5') }}" data-no-spa>
+            <img src="{{ asset('asset/map-summer/summer5.svg') }}" alt="stage" class="stage5 button-stage">
         </a>
 
         <style>
             body {
-                background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat center center;
-                background-size: cover;
+                background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat top left;
+                background-size: 100% auto;
                 background-attachment: scroll;
-                height: 150vh;
+                height: 120vh;
             }
         </style>
     </div>

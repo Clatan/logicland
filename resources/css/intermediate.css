@@ -1,13 +1,13 @@
 .stage1 {
     position: absolute;
-    top: 390px;
+    bottom: 130px;
     left: 60px;
 }
 
 .stage2 {
     position: absolute;
-    top: 350px;
-    left: 460px;
+    bottom: 210px;
+    left: 440px;
 }
 
 .stage3 {
@@ -30,7 +30,7 @@
 
 @media (max-width: 1200px) {
     body{
-        background: url('asset/map-spring/bckg-spring.svg') no-repeat top left;
+        background: url('asset/map-autumn/bckg-autumn.svg') no-repeat top left;
         background-size: 100% auto;
         background-attachment: scroll;
         height: 120vh;
@@ -40,7 +40,7 @@
 
 @media (max-width: 1024px) {
     body{
-        background: url('asset/map-spring/bckg-spring.svg') no-repeat top left;
+        background: url('asset/map-autumn/bckg-autumn.svg') no-repeat top left;
         background-size: 100%;
         background-attachment: scroll;
         height: 180vh;
@@ -50,7 +50,7 @@
 
 @media (max-width: 992px){
     body{
-        background: url('asset/map-spring/bckg-spring.svg') no-repeat top left;
+        background: url('asset/map-autumn/bckg-autumn.svg') no-repeat top left;
         background-size: 100% auto;
         background-attachment: scroll;
         height: 120vh;
@@ -60,7 +60,7 @@
 
 @media (max-width: 900px) {
     body{
-        background: url('asset/map-spring/bckg-spring.svg') no-repeat top left;
+        background: url('asset/map-autumn/bckg-autumn.svg') no-repeat top left;
         background-size: 100% auto;
         background-attachment: scroll;
         height: 100vh;
@@ -70,7 +70,7 @@
 
 @media (max-width: 768px) {
     body{
-        background: url('asset/map-spring/bckg-spring.svg') no-repeat top left;
+        background: url('asset/map-autumn/bckg-autumn.svg') no-repeat top left;
         background-size: 100% auto;
         height: 100px;
         display: flex;

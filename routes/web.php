@@ -48,5 +48,23 @@ Route::get('/beginner/stage3/{id}', [QuestionController::class, 'show'])->name('
 Route::get('/beginner/stage4/{id}', [QuestionController::class, 'show'])->name('stage4.show');
 Route::get('/beginner/stage5/{id}', [QuestionController::class, 'show'])->name('stage5.show');
 
+Route::get('/elementary/stage1/{id}', [QuestionController::class, 'show'])->name('stage1.show');
+Route::get('/elementary/stage2/{id}', [QuestionController::class, 'show'])->name('stage2.show');
+Route::get('/elementary/stage3/{id}', [QuestionController::class, 'show'])->name('stage3.show');
+Route::get('/elementary/stage4/{id}', [QuestionController::class, 'show'])->name('stage4.show');
+Route::get('/elementary/stage5/{id}', [QuestionController::class, 'show'])->name('stage5.show');
+
+Route::get('/intermediate/stage1/{id}', [QuestionController::class, 'show'])->name('stage1.show');
+Route::get('/intermediate/stage2/{id}', [QuestionController::class, 'show'])->name('stage2.show');
+Route::get('/intermediate/stage3/{id}', [QuestionController::class, 'show'])->name('stage3.show');
+Route::get('/intermediate/stage4/{id}', [QuestionController::class, 'show'])->name('stage4.show');
+Route::get('/intermediate/stage5/{id}', [QuestionController::class, 'show'])->name('stage5.show');
+
+Route::get('/advance/stage1/{id}', [QuestionController::class, 'show'])->name('stage1.show');
+Route::get('/advance/stage2/{id}', [QuestionController::class, 'show'])->name('stage2.show');
+Route::get('/advance/stage3/{id}', [QuestionController::class, 'show'])->name('stage3.show');
+Route::get('/advance/stage4/{id}', [QuestionController::class, 'show'])->name('stage4.show');
+Route::get('/advance/stage5/{id}', [QuestionController::class, 'show'])->name('stage5.show');
+
 // Route untuk submit jawaban
 Route::post('/submit-answer', [QuestionController::class, 'submitAnswer'])->name('submit.answer');

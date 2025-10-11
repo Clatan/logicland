@@ -28,8 +28,7 @@ class QuestionController extends Controller
             } elseif (str_contains($currentUrl, 'stage5')) {
                 $stage = 'stage5';
             }
-        }
-        else if (str_contains($currentUrl, 'elementary')) {
+        } else if (str_contains($currentUrl, 'elementary')) {
             $level = 'elementary';
 
             if (str_contains($currentUrl, 'stage1')) {
@@ -43,11 +42,35 @@ class QuestionController extends Controller
             } elseif (str_contains($currentUrl, 'stage5')) {
                 $stage = 'stage5';
             }
+        } else if (str_contains($currentUrl, 'intermediate')) {
+            $level = 'intermediate';
+
+            if (str_contains($currentUrl, 'stage1')) {
+                $stage = 'stage1';
+            } elseif (str_contains($currentUrl, 'stage2')) {
+                $stage = 'stage2';
+            } elseif (str_contains($currentUrl, 'stage3')) {
+                $stage = 'stage3';
+            } elseif (str_contains($currentUrl, 'stage4')) {
+                $stage = 'stage4';
+            } elseif (str_contains($currentUrl, 'stage5')) {
+                $stage = 'stage5';
+            }
+        } else if (str_contains($currentUrl, 'advance')) {
+            $level = 'advance';
+
+            if (str_contains($currentUrl, 'stage1')) {
+                $stage = 'stage1';
+            } elseif (str_contains($currentUrl, 'stage2')) {
+                $stage = 'stage2';
+            } elseif (str_contains($currentUrl, 'stage3')) {
+                $stage = 'stage3';
+            } elseif (str_contains($currentUrl, 'stage4')) {
+                $stage = 'stage4';
+            } elseif (str_contains($currentUrl, 'stage5')) {
+                $stage = 'stage5';
+            }
         }
-
-
-
-
 
         return view($level . '.' . $stage, compact('question', 'stage'));
     }
