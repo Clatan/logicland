@@ -40,19 +40,19 @@
                     <input type="hidden" name="question_id" value="{{ $question->question_id }}">
 
                     <button type="submit" name="answer" value="A" class="answer-btn btn-A">
-                        <img src="{{ asset('asset/elementary/stage3-A.svg') }}" width="100">
+                        <img src="{{ asset('asset/elementary/stage3-A.svg') }}" width="300">
                     </button>
 
                     <button type="submit" name="answer" value="B" class="answer-btn btn-B">
-                        <img src="{{ asset('asset/elementary/stage3-B.svg') }}" width="100">
+                        <img src="{{ asset('asset/elementary/stage3-B.svg') }}" width="300">
                     </button>
 
                     <button type="submit" name="answer" value="C" class="answer-btn btn-C">
-                        <img src="{{ asset('asset/elementary/stage3-C.svg') }}" width="100">
+                        <img src="{{ asset('asset/elementary/stage3-C.svg') }}" width="300">
                     </button>
 
                     <button type="submit" name="answer" value="D" class="answer-btn btn-D">
-                        <img src="{{ asset('asset/elementary/stage3-D.svg') }}" width="100">
+                        <img src="{{ asset('asset/elementary/stage3-D.svg') }}" width="300">
                     </button>
                 </form>
 

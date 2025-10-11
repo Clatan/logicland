@@ -32,7 +32,7 @@
 
     <div>
         <div class="question-container" style="justify-content: center; align-items: center;">
-            <img src="{{ asset('asset/intermediate/' . $question->question_detail) }}" alt="Soal" width="600"
+            <img src="{{ asset('asset/intermediate/' . $question->question_detail) }}" alt="Soal" width="1000"
                 class="question-img">
             <div >
                 <form action="/submit-answer" method="POST" class="answer-container">
