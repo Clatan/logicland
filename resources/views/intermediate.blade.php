@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Level Intermediate</title>
-    <link rel="icon" type="svg+xml" href="{{ asset('asset/logo.svg') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
-    @vite('resources/css/map.css')
+@extends('layouts.app')
 
-</head>
-<body>
-  <audio id="bg-audio" loop>
-      <source src="{{ asset('asset/audio.mp3') }}" type="audio/mpeg">
-  </audio>
+@section('title', 'LogicLand')
 
+@section('custom-css')
+    @vite(['resources/css/map.css'])
+@endsection
+
+@section('content')
   
   <div class="navbar">
     <div class="navbarback">
@@ -65,19 +56,7 @@
       <img src="{{ asset('asset/map-autumn/autumn5.svg') }}" alt="stage" style="position: absolute; bottom: -340px; right: 100px;">
     </a>
 
-    
-</body>
 <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden; 
-    overflow-y: auto;
-    background-color: #000; 
-  }
-
   body {
     background: url('{{ asset('asset/map-autumn/bckg-autumn.svg') }}') no-repeat top left;
     background-size: 100% auto;
@@ -85,4 +64,4 @@
     height: 150vh;
   }
 </style>
-</html>
+@endsection
