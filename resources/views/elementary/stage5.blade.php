@@ -32,7 +32,7 @@
 
     <div>
         <div class="question-container" style="justify-content: center; align-items: center;">
-            <img src="{{ asset('asset/elementary/' . $question->question_detail) }}" alt="Soal" width="400"
+            <img src="{{ asset('asset/elementary/' . $question->question_detail) }}" alt="Soal" width="600"
                 class="question-img">
             <div >
                 <form action="/submit-answer" method="POST" class="answer-container">
@@ -40,19 +40,19 @@
                     <input type="hidden" name="question_id" value="{{ $question->question_id }}">
 
                     <button type="submit" name="answer" value="A" class="answer-btn btn-A">
-                        <img src="{{ asset('asset/elementary/stage5-A.svg') }}" width="100">
+                        <img src="{{ asset('asset/elementary/stage5-A.svg') }}" width="200">
                     </button>
 
                     <button type="submit" name="answer" value="B" class="answer-btn btn-B">
-                        <img src="{{ asset('asset/elementary/stage5-B.svg') }}" width="100">
+                        <img src="{{ asset('asset/elementary/stage5-B.svg') }}" width="200">
                     </button>
 
                     <button type="submit" name="answer" value="C" class="answer-btn btn-C">
-                        <img src="{{ asset('asset/elementary/stage5-C.svg') }}" width="100">
+                        <img src="{{ asset('asset/elementary/stage5-C.svg') }}" width="200">
                     </button>
 
                     <button type="submit" name="answer" value="D" class="answer-btn btn-D">
-                        <img src="{{ asset('asset/elementary/stage5-D.svg') }}" width="100">
+                        <img src="{{ asset('asset/elementary/stage5-D.svg') }}" width="200">
                     </button>
                 </form>
 
