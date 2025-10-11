@@ -33,35 +33,34 @@
 
     <div>
         <a href="{{ url('/beginner') }}" data-no-spa>
-            <img src="{{ asset('asset/island-spring.svg') }} " alt="Beginner" class="island-container top-left">
+            <img src="{{ asset('asset/island-spring.svg') }} " alt="Beginner" class="island-container top-left beginner">
         </a>
 
         <a href="{{ url('/elementary') }}" data-no-spa>
-            <img src="{{ asset('asset/island-summer.svg') }}" alt="Elementary" class="island-container top-right">
+            <img src="{{ asset('asset/island-summer.svg') }}" alt="Elementary"
+                class="island-container top-right elementary">
         </a>
 
         <a href="{{ url('/intermediate') }}" data-no-spa>
-            <img src="{{ asset('asset/island-autumn.svg') }}" alt="Intermediate" class="island-container bottom-left">
+            <img src="{{ asset('asset/island-autumn.svg') }}" alt="Intermediate"
+                class="island-container bottom-left intermediate">
         </a>
 
         <a href="{{ url('/advance') }}" data-no-spa>
-            <img src="{{ asset('asset/island-winter.svg') }}" alt="Advance" class="island-container bottom-right">
+            <img src="{{ asset('asset/island-winter.svg') }}" alt="Advance" class="island-container bottom-right advance">
         </a>
     </div>
 
-    <img src="{{ asset('asset/bridge-1.svg') }}" alt="road"
-        style="position: fixed; top: 195px; left: 500px; width: 270px;">
-    <img src="{{ asset('asset/bridge-2.svg') }}" alt="road"
-        style="position: fixed; bottom: 250px; right: 620px; width: 220px;">
-    <img src="{{ asset('asset/bridge-3.svg') }}" alt="road"
-        style="position: fixed; bottom: 170px; right: 510px; width: 200px; transform: rotate(-8deg);">
+    <img src="{{ asset('asset/bridge-1.svg') }}" alt="road" class="road1">
+    <img src="{{ asset('asset/bridge-2.svg') }}" alt="road" class="road2">
+    <img src="{{ asset('asset/bridge-3.svg') }}" alt="road" class="road3">
 
     <style>
         body {
             background: url('{{ asset('asset/bckg.svg') }}');
             background-repeat: no-repeat;
             background-size: cover;
-            height: 100%;
+            height: 110vh;
             width: 100%;
             display: flex;
             justify-content: center;

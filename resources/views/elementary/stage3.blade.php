@@ -92,7 +92,7 @@
             justify-content: center;
             align-items: flex-start;
             background-color: #000;
-            background: url('{{ asset('asset/map-spring/bckg-spring.svg') }}') no-repeat top left;
+            background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat top left;
             overflow: hidden;
             */
         }

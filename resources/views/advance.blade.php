@@ -60,7 +60,7 @@
 
     <style>
         body {
-            background: url('{{ asset('asset/map-winter/bckg-winter.svg') }}') no-repeat top left;
+            background: url('{{ asset('asset/map-winter/bckg-winter.svg') }}') repeat top left;
             background-size: 100% auto;
             background-attachment: scroll;
             height: 120vh;

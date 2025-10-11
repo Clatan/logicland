@@ -27,11 +27,12 @@
     z-index: 1000;
 }
 
-.navbar-left{
+.navbar-left {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .navbar-right {
     display: flex;
     align-items: center;
@@ -55,7 +56,8 @@
 
 .island-container {
     position: fixed;
-    width: 25%;
+    width: 30%;
+    z-index: 1;
 }
 
 .island-container:hover {
@@ -69,7 +71,7 @@
 
 .top-right {
     top: 90px;
-    right: 370px; 
+    right: 370px;
 }
 
 .bottom-left {
@@ -82,11 +84,304 @@
     right: 165px;
 }
 
+.road1 {
+    position: fixed;
+    top: 195px;
+    left: 500px;
+    width: 270px;
+}
+
+.road2 {
+    position: fixed;
+    bottom: 250px;
+    right: 620px;
+    width: 220px;
+}
+
+.road3 {
+    position: fixed;
+    bottom: 170px;
+    right: 510px;
+    width: 200px;
+    transform: rotate(-8deg);
+}
+
+@media (max-width: 1200px) {
+
+    .beginner,
+    .elementary,
+    .intermediate,
+    .advance {
+        width: 34%;
+    }
+
+    .beginner {
+        transform: translate(-100px, 20px);
+    }
+
+    .elementary {
+        transform: translate(350px, 80px);
+    }
+
+    .intermediate {
+        transform: translate(-360px, -80px);
+    }
+
+    .advance {
+        transform: translate(140px, -20px);
+    }
+
+    .beginner:hover {
+        transform: translate(-100px, 20px) scale(1.1);
+    }
+
+    .elementary:hover {
+        transform: translate(350px, 80px) scale(1.1);
+    }
+
+    .intermediate:hover {
+        transform: translate(-360px, -150px) scale(1.1);
+    }
+
+    .advance:hover {
+        transform: translate(140px, -20px) scale(1.1);
+    }
+
+    .road1 {
+        width: 300px;
+        top: 260px;
+        left: 400px;
+        rotate: 20deg;
+        z-index: -1;
+    }
+
+    .road2 {
+        width: 300px;
+        bottom: 250px;
+        right: 300px;
+        rotate: 10deg;
+        z-index: -1;
+    }
+
+    .road3 {
+        width: 300px;
+        bottom: 140px;
+        left: 400px;
+        rotate: 10deg;
+        z-index: -1;
+    }
+
+}
+
+
 @media (max-width: 1024px) {
-    .island-container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 20px;
+
+    .beginner,
+    .elementary,
+    .intermediate,
+    .advance {
+        width: 36%;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    .beginner,
+    .elementary,
+    .intermediate,
+    .advance {
+        width: 36%;
+    }
+
+    .beginner {
+        transform: translate(-100px, 20px);
+    }
+
+    .elementary {
+        transform: translate(350px, 80px);
+    }
+
+    .intermediate {
+        transform: translate(-360px, -150px);
+    }
+
+    .advance {
+        transform: translate(140px, -20px);
+    }
+
+
+    .beginner:hover {
+        transform: translate(-100px, 20px) scale(1.1);
+    }
+
+    .elementary:hover {
+        transform: translate(350px, 80px) scale(1.1);
+    }
+
+    .intermediate:hover {
+        transform: translate(-360px, -150px) scale(1.1);
+    }
+
+    .advance:hover {
+        transform: translate(140px, -20px) scale(1.1);
+    }
+
+    .road1 {
+        width: 300px;
+        top: 260px;
+        left: 340px;
+        rotate: 20deg;
+        z-index: -1;
+    }
+
+    .road2 {
+        width: 300px;
+        bottom: 250px;
+        right: 250px;
+        rotate: 10deg;
+        z-index: -1;
+    }
+
+    .road3 {
+        width: 300px;
+        bottom: 140px;
+        left: 300px;
+        rotate: 10deg;
+        z-index: -1;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .beginner,
+    .elementary,
+    .intermediate,
+    .advance {
+        width: 40%;
+    }
+
+    .beginner {
+        transform: translate(-100px, 20px);
+    }
+
+    .elementary {
+        transform: translate(350px, 80px);
+    }
+
+    .intermediate {
+        transform: translate(-360px, -150px);
+    }
+
+    .advance {
+        transform: translate(140px, -20px);
+    }
+
+    .beginner:hover {
+        transform: translate(-100px, 20px) scale(1.1);
+    }
+
+    .elementary:hover {
+        transform: translate(350px, 80px) scale(1.1);
+    }
+
+    .intermediate:hover {
+        transform: translate(-360px, -150px) scale(1.1);
+    }
+
+    .advance:hover {
+        transform: translate(140px, -20px) scale(1.1);
+    }
+
+    .road1 {
+        width: 200px;
+        top: 280px;
+        left: 310px;
+        rotate: 20deg;
+        z-index: -1;
+    }
+
+    .road2 {
+        width: 200px;
+        bottom: 300px;
+        right: 220px;
+        rotate: 10deg;
+        z-index: -1;
+    }
+
+    .road3 {
+        width: 200px;
+        bottom: 160px;
+        left: 250px;
+        rotate: 10deg;
+        z-index: -1;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .beginner,
+    .elementary,
+    .intermediate,
+    .advance {
+        width: 40%;
+    }
+
+    .beginner {
+        transform: translate(-100px, 0px);
+    }
+
+    .elementary {
+        transform: translate(350px, 80px);
+    }
+
+    .intermediate {
+        transform: translate(-360px, -150px);
+    }
+
+    .advance {
+        transform: translate(140px, -20px);
+    }
+
+    .beginner:hover {
+        transform: translate(-100px, 0px) scale(1.1);
+    }
+
+    .elementary:hover {
+        transform: translate(350px, 80px) scale(1.1);
+    }
+
+    .intermediate:hover {
+        transform: translate(-360px, -150px) scale(1.1);
+    }
+
+    .advance:hover {
+        transform: translate(140px, -20px) scale(1.1);
+    }
+
+    .road1 {
+        width: 180px;
+        top: 320px;
+        left: 210px;
+        rotate: 35deg;
+        z-index: -1;
+    }
+
+    .road2 {
+        width: 180px;
+        bottom: 300px;
+        right: 160px;
+        rotate: 0deg;
+        z-index: -1;
+    }
+
+    .road3 {
+        width: 180px;
+        bottom: 150px;
+        left: 180px;
+        rotate: 20deg;
+        z-index: -1;
     }
 }
 
@@ -95,14 +390,17 @@
         flex-direction: column;
         gap: 10px;
     }
+
     .navbar-center img {
         width: 150px;
     }
+
     .island-container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, auto);
         padding-top: 120px;
     }
+
     .island-container img {
         width: 60%;
     }

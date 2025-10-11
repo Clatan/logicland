@@ -27,3 +27,57 @@
     bottom: 190px;
     right: 100px;
 }
+
+@media (max-width: 768px) {
+
+ .stage1{
+        width: 20%;
+        transform: translate(-20px, -650px);
+    }
+
+    .stage2{
+        width: 20%;
+        transform: translate(-80px, -720px);
+    }
+
+    .stage3{
+        width: 20%;
+        transform: translate(-550px, 180px);
+    }
+
+    .stage4{
+        width: 20%;
+        transform: translate(350px, 30px);
+    }
+
+    .stage5{
+        width: 20%;
+        transform: translate(-80px, 300px);
+    }
+
+    .stage1:hover{
+        width: 20%;
+        transform: translate(-20px, -650px) scale(1.1);
+    }
+
+    .stage2:hover{
+        width: 20%;
+         transform: translate(-80px, -720px)scale(1.1);
+    }
+
+    .stage3:hover{
+        width: 20%;
+        transform: translate(-550px, 180px) scale(1.1);
+    }
+
+    .stage4:hover{
+        width: 20%;
+        transform: translate(350px, 30px)scale(1.1);
+    }
+
+    .stage5:hover{
+        width: 20%;
+         transform: translate(-80px, 300px)scale(1.1);
+    }
+
+}

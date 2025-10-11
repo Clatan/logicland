@@ -3,11 +3,12 @@
 @section('title', 'LogicLand')
 
 @section('custom-css')
+    @vite(['resources/css/map.css'])
     @vite(['resources/css/stage.css'])
 @endsection
 
 @section('content')
-
+<div class="main-content">
     <div class="navbar">
         <div class="navbarback">
             <img src="{{ asset('asset/back.svg') }}" alt="Back Button" class="button-back"
@@ -84,17 +85,19 @@
     <style>
         html,
         body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
+            background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat center center;
+            background-size: 100% auto;
+            background-attachment: scroll;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             background-color: #000;
-            background: url('{{ asset('asset/map-spring/bckg-spring.svg') }}') no-repeat top left;
-            overflow: hidden; */
+            widht: 100%;
+            height: 120vh;
+            display: flex;
+            overflow: hidden;
+            */
         }
     </style>
-
+</div>
 @endsection

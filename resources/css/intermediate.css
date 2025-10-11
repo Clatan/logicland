@@ -30,7 +30,7 @@
 
 @media (max-width: 1200px) {
     body{
-        background: url('asset/map-autumn/bckg-autumn.svg') no-repeat top left;
+        background: url('asset/map-autumn/bckg-autumn.svg') repeat top left;
         background-size: 100% auto;
         background-attachment: scroll;
         height: 120vh;
@@ -40,7 +40,7 @@
 
 @media (max-width: 1024px) {
     body{
-        background: url('asset/map-autumn/bckg-autumn.svg') no-repeat top left;
+        background: url('asset/map-autumn/bckg-autumn.svg') repeat top left;
         background-size: 100%;
         background-attachment: scroll;
         height: 180vh;
@@ -50,7 +50,7 @@
 
 @media (max-width: 992px){
     body{
-        background: url('asset/map-autumn/bckg-autumn.svg') no-repeat top left;
+        background: url('asset/map-autumn/bckg-autumn.svg') repeat top left;
         background-size: 100% auto;
         background-attachment: scroll;
         height: 120vh;
@@ -60,7 +60,7 @@
 
 @media (max-width: 900px) {
     body{
-        background: url('asset/map-autumn/bckg-autumn.svg') no-repeat top left;
+        background: url('asset/map-autumn/bckg-autumn.svg') repeat top left;
         background-size: 100% auto;
         background-attachment: scroll;
         height: 100vh;
@@ -70,9 +70,60 @@
 
 @media (max-width: 768px) {
     body{
-        background: url('asset/map-autumn/bckg-autumn.svg') no-repeat top left;
+        background: url('asset/map-autumn/bckg-autumn.svg') repeat top left;
         background-size: 100% auto;
         height: 100px;
         display: flex;
     }
+
+     .stage1{
+        width: 20%;
+        transform: translate(0px, -450px);
+    }
+
+    .stage2{
+        width: 20%;
+        transform: translate(-80px, -240px);
+    }
+
+    .stage3{
+        width: 20%;
+        transform: translate(250px, 0px);
+    }
+
+    .stage4{
+        width: 20%;
+        transform: translate(350px, -230px);
+    }
+
+    .stage5{
+        width: 20%;
+        transform: translate(-230px, -30px);
+    }
+
+    .stage1:hover{
+        width: 20%;
+        transform: translate(0px, -450px) scale(1.1);
+    }
+
+    .stage2:hover{
+        width: 20%;
+        transform: translate(-80px, -240px) scale(1.1);
+    }
+
+    .stage3:hover{
+        width: 20%;
+        transform: translate(250px, 0px) scale(1.1);
+    }
+
+    .stage4:hover{
+        width: 20%;
+        transform: translate(350px, -230px) scale(1.1);
+    }
+
+    .stage5:hover{
+        width: 20%;
+        transform: translate(-230px, -30px) scale(1.1);
+    }
+
 }

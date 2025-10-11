@@ -52,7 +52,7 @@
 
         <style>
             body {
-                background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat top left;
+                background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') repeat top left;
                 background-size: 100% auto;
                 background-attachment: scroll;
                 height: 120vh;
