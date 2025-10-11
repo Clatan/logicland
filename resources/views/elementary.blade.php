@@ -4,10 +4,11 @@
 
 @section('custom-css')
     @vite(['resources/css/map.css'])
+    @vite(['resources/css/elementary.css'])
 @endsection
 
 @section('content')
-
+<div id= "main-content">
 <div class="navbar">
   <div class="navbarback">
       <img 
@@ -34,27 +35,28 @@
 </div>
 
 <a href="{{ url('/elementary/stage1') }}" data-no-spa>
-  <img src="{{ asset('asset/map-summer/summer5.svg') }}" alt="stage" style="position: absolute; top: 450px; right: 100px;">
+  <img src="{{ asset('asset/map-summer/summer5.svg') }}" alt="stage" class="stage1">
 </a>
 <a href="{{ url('/elementary/stage2') }}" data-no-spa>
-  <img src="{{ asset('asset/map-summer/summer4.svg') }}" alt="stage" style="position: absolute; top: 380px; right: 430px;">
+  <img src="{{ asset('asset/map-summer/summer4.svg') }}" alt="stage" class="stage2">
 </a>
 <a href="{{ url('/elementary/stage3') }}" data-no-spa>
-  <img src="{{ asset('asset/map-summer/summer3.svg') }}" alt="stage" style="position: absolute; top: 500px; left: 590px;">
+  <img src="{{ asset('asset/map-summer/summer3.svg') }}" alt="stage" class="stage3">
 </a>
 <a href="{{ url('/elementary/stage4') }}" data-no-spa>
-  <img src="{{ asset('asset/map-summer/summer2.svg') }}" alt="stage" style="position: absolute; bottom: -260px; left: 430px;">
+  <img src="{{ asset('asset/map-summer/summer2.svg') }}" alt="stage" class="stage4">
 </a>
 <a href="{{ url('/elementary/stage5') }}" data-no-spa>
-  <img src="{{ asset('asset/map-summer/summer1.svg') }}" alt="stage" style="position: absolute; bottom: -340px; left: 100px;">
+  <img src="{{ asset('asset/map-summer/summer1.svg') }}" alt="stage" class="stage5">
 </a>
 
 <style>
   body {
-    background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat top left;
-    background-size: 100% auto;
+    background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat center center;
+    background-size: cover;
     background-attachment: scroll;
     height: 150vh;
   }
 </style>
+</div>
 @endsection

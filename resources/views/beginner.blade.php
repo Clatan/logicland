@@ -4,10 +4,11 @@
 
 @section('custom-css')
     @vite(['resources/css/map.css'])
+    @vite(['resources/css/beginner.css'])
 @endsection
 
 @section('content')
-
+<div id= "main-content">
 <div class="navbar">
   <div class="navbarback">
     <img 
@@ -21,9 +22,9 @@
   </div>
   
     <div class="navbar-left">
-        <img src="{{ asset('asset/life.svg') }}" alt="life">
-        <img src="{{ asset('asset/life.svg') }}" alt="life">
-        <img src="{{ asset('asset/life.svg') }}" alt="life">
+        <img src="{{ asset('asset/life.svg') }}" alt="life" class="life">
+        <img src="{{ asset('asset/life.svg') }}" alt="life" class="life">
+        <img src="{{ asset('asset/life.svg') }}" alt="life" class="life">
     </div>
     <div class="navbar-center">
         <p class="text-overlay">Beginner</p>
@@ -35,19 +36,19 @@
 </div>
 
 <a href="{{ url('/beginner/stage1/1') }}" data-no-spa>
-  <img src="{{ asset('asset/map-spring/spring1.svg') }}" alt="stage" style="position: absolute; top: 400px; left: 100px;">
+  <img src="{{ asset('asset/map-spring/spring1.svg') }}" alt="stage" class="stage1">
 </a>
 <a href="{{ url('/beginner/stage2/2') }}" data-no-spa>
-  <img src="{{ asset('asset/map-spring/spring2.svg') }}" alt="stage" style="position: absolute; top: 355px; left: 430px;">
+  <img src="{{ asset('asset/map-spring/spring2.svg') }}" alt="stage" class="stage2">
 </a>
 <a href="{{ url('/beginner/stage3/3') }}" data-no-spa>
-  <img src="{{ asset('asset/map-spring/spring3.svg') }}" alt="stage" style="position: absolute; top: 500px; left: 700px;">
+  <img src="{{ asset('asset/map-spring/spring3.svg') }}" alt="stage" class="stage3">
 </a>
 <a href="{{ url('/beginner/stage4/4') }}" data-no-spa>
-  <img src="{{ asset('asset/map-spring/spring4.svg') }}" alt="stage" style="position: absolute; bottom: -260px; right: 430px;">
+  <img src="{{ asset('asset/map-spring/spring4.svg') }}" alt="stage" class="stage4">
 </a>
 <a href="{{ url('/beginner/stage5/5') }}" data-no-spa>
-  <img src="{{ asset('asset/map-spring/spring5.svg') }}" alt="stage" style="position: absolute; bottom: -340px; right: 100px;">
+  <img src="{{ asset('asset/map-spring/spring5.svg') }}" alt="stage" class="stage5">
 </a>
 
 <style>
@@ -65,7 +66,9 @@
     background: url('{{ asset('asset/map-spring/bckg-spring.svg') }}') no-repeat top left;
     background-size: 100% auto;
     background-attachment: scroll;
-    height: 150vh;
+    height: 150vh;  
+    display: flex;
   }
 </style>
+</div>
 @endsection

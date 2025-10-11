@@ -29,7 +29,7 @@
         
 <div>
     <a href="{{ url('/beginner') }}" data-no-spa>
-        <img src="{{ asset('asset/island-spring.svg') }}" alt="Beginner" class="island-container top-left">
+        <img src="{{ asset('asset/island-spring.svg') }} " alt="Beginner" class="island-container top-left">
     </a>
 
     <a href="{{ url('/elementary') }}" data-no-spa>
