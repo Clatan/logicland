@@ -59,24 +59,32 @@
             </div>
         </div>
 
-        {{-- POPUP (selalu tampil jika session ada) --}}
-        @if (session('popup'))
-            <div id="popup"
-                style="
-        position:fixed;
-        top:40%;
-        left:50%;
-        transform:translate(-50%, -50%);
-        background:white;
-        color:black;
-        padding:30px;
-        border-radius:15px;
-        box-shadow:0 0 20px rgba(0,0,0,0.3);
-        font-size:20px;
-    ">
-                {{ session('popup') }}
+        @if (session('popup_status'))
+            <div class="popup-overlay">
+                <div class="popup-box">
+                    <p class="popup-text">{{ session('popup_status') }}</p>
+                    <div class="popup-buttons">
+                        <a href="{{ url('/home') }}" class="btn btn-home">Home</a>
+                        <a href="{{ url('/beginner/stage1/1') }}" class="btn btn-retry">Retry</a>
+                        <a href="{{ url('/beginner') }}" class="btn btn-next">Next Stage</a>
+                    </div>
+                </div>
             </div>
+            {{-- <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const overlay = document.getElementById('popupOverlay');
+                    overlay.style.display = 'flex'; // tampilkan popup
+
+                    // Klik di luar kotak popup untuk menutup
+                    overlay.addEventListener('click', (e) => {
+                        if (e.target === overlay) {
+                            overlay.style.display = 'none';
+                        }
+                    });
+                });
+            </script> --}}
         @endif
+
 
     </div>
 
@@ -93,7 +101,8 @@
             align-items: flex-start;
             background-color: #000;
             background: url('{{ asset('asset/map-spring/bckg-spring.svg') }}') no-repeat top left;
-            overflow: hidden; */
+            overflow: hidden;
+            */
         }
     </style>
 

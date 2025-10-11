@@ -83,10 +83,18 @@ class QuestionController extends Controller
         $question = Question::findOrFail($questionId);
 
         if ($answer === $question->question_answer) {
-            // Simpan status benar di session
-            return back()->with('popup', '✅ Jawaban kamu benar!');
+            $status = 'Success';
         } else {
-            return back()->with('popup', '❌ Jawaban kamu salah!');
+            $status = 'Failed';
         }
+
+        // Simpan status + tombol ke session
+        return back()->with([
+            'popup_status' => $status,
+            'popup_home' => route('home'),
+            'popup_retry' => url()->previous(),
+            'popup_next' => route('beginner'),
+        ]);
+
     }
 }
