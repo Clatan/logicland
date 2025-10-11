@@ -29,7 +29,7 @@
     </div>
 
     <div class="navbar-right">
-        <img id="audio-icon" src="{{ asset('asset/audio-on.svg') }}" alt="audio">
+        <img id="audio-btn" src="{{ asset('asset/audio-on.svg') }}" alt="audio">
         <a href="/setting" data-no-spa>
             <img id="setting-btn" src="{{ asset('asset/setting.svg') }}" alt="setting">
         </a>

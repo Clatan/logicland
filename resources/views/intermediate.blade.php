@@ -4,6 +4,7 @@
 
 @section('custom-css')
     @vite(['resources/css/map.css'])
+    @vite(['resources/css/intermediate.css'])
 @endsection
 
 @section('content')
@@ -36,24 +37,24 @@
         </div>
     </div>
 
-    <a href="{{ url('/intermediate/stage1') }}">
-      <img src="{{ asset('asset/map-autumn/autumn1.svg') }}" alt="stage" style="position: absolute; top: 510px; left: 100px;">
+    <a href="{{ url('/intermediate/stage1/1') }}" data-no-spa>
+      <img src="{{ asset('asset/map-autumn/autumn1.svg') }}" alt="stage" class="stage1 button-stage">
     </a>
 
-    <a href="{{ url('/intermediate/stage2') }}">
-      <img src="{{ asset('asset/map-autumn/autumn2.svg') }}" alt="stage" style="position: absolute; top: 430px; left: 430px;">
+    <a href="{{ url('/intermediate/stage2/2') }}" data-no-spa>
+      <img src="{{ asset('asset/map-autumn/autumn2.svg') }}" alt="stage" class="stage2 button-stage">
     </a>
 
-    <a href="{{ url('/intermediate/stage3') }}">
-      <img src="{{ asset('asset/map-autumn/autumn3.svg') }}" alt="stage" style="position: absolute; top: 500px; left: 700px;">
+    <a href="{{ url('/intermediate/stage3/3') }}" data-no-spa>
+      <img src="{{ asset('asset/map-autumn/autumn3.svg') }}" alt="stage" class="stage3 button-stage">
     </a>
 
-    <a href="{{ url('/intermediate/stage4') }}">
-      <img src="{{ asset('asset/map-autumn/autumn4.svg') }}" alt="stage" style="position: absolute; bottom: -260px; right: 430px;">
+    <a href="{{ url('/intermediate/stage4/4') }}" data-no-spa>
+      <img src="{{ asset('asset/map-autumn/autumn4.svg') }}" alt="stage" class="stage4 button-stage">
     </a>
 
-    <a href="{{ url('/intermediate/stage5') }}">
-      <img src="{{ asset('asset/map-autumn/autumn5.svg') }}" alt="stage" style="position: absolute; bottom: -340px; right: 100px;">
+    <a href="{{ url('/intermediate/stage5/5') }}" data-no-spa>
+      <img src="{{ asset('asset/map-autumn/autumn5.svg') }}" alt="stage" class="stage5 button-stage">
     </a>
 
 <style>
@@ -61,7 +62,7 @@
     background: url('{{ asset('asset/map-autumn/bckg-autumn.svg') }}') no-repeat top left;
     background-size: 100% auto;
     background-attachment: scroll;
-    height: 150vh;
+    height: 120vh;
   }
 </style>
 @endsection

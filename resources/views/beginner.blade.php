@@ -26,25 +26,25 @@
                 <p class="text-overlay">Beginner</p>
             </div>
             <div class="navbar-right">
-                <img id="audio-icon" src="{{ asset('asset/audio-on.svg') }}" alt="audio" onclick="toggleAudio()">
-                <img src="{{ asset('asset/setting.svg') }}" alt="setting">
+                <img id="audio-btn" src="{{ asset('asset/audio-on.svg') }}" alt="audio" onclick="toggleAudio()">
+                <img id="setting-btn" src="{{ asset('asset/setting.svg') }}" alt="setting">
             </div>
         </div>
 
         <a href="{{ url('/beginner/stage1/1') }}" data-no-spa>
-            <img src="{{ asset('asset/map-spring/spring1.svg') }}" alt="stage" class="stage1">
+            <img src="{{ asset('asset/map-spring/spring1.svg') }}" alt="stage" class="stage1 button-stage">
         </a>
         <a href="{{ url('/beginner/stage2/2') }}" data-no-spa>
-            <img src="{{ asset('asset/map-spring/spring2.svg') }}" alt="stage" class="stage2">
+            <img src="{{ asset('asset/map-spring/spring2.svg') }}" alt="stage" class="stage2 button-stage">
         </a>
         <a href="{{ url('/beginner/stage3/3') }}" data-no-spa>
-            <img src="{{ asset('asset/map-spring/spring3.svg') }}" alt="stage" class="stage3">
+            <img src="{{ asset('asset/map-spring/spring3.svg') }}" alt="stage" class="stage3 button-stage">
         </a>
         <a href="{{ url('/beginner/stage4/4') }}" data-no-spa>
-            <img src="{{ asset('asset/map-spring/spring4.svg') }}" alt="stage" class="stage4">
+            <img src="{{ asset('asset/map-spring/spring4.svg') }}" alt="stage" class="stage4 button-stage">
         </a>
         <a href="{{ url('/beginner/stage5/5') }}" data-no-spa>
-            <img src="{{ asset('asset/map-spring/spring5.svg') }}" alt="stage" class="stage5">
+            <img src="{{ asset('asset/map-spring/spring5.svg') }}" alt="stage" class="stage5 button-stage">
         </a>
 
         <style>
@@ -63,7 +63,7 @@
                 background: url('{{ asset('asset/map-spring/bckg-spring.svg') }}') no-repeat top left;
                 background-size: 100% auto;
                 background-attachment: scroll;
-                height: 150vh;
+                height: 120vh;
                 display: flex;
             }
         </style>
