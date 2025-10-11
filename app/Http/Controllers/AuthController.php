@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Progress;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
@@ -29,6 +30,8 @@ class AuthController extends Controller
             Log::warning('Login failed', ['username' => $request->username]);
             return back()->with('error', 'Wrong username or password!');
         }
+
+
     }
 
     public function signup(Request $request)
