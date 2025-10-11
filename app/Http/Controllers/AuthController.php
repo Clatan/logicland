@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Progress;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
@@ -23,11 +24,16 @@ class AuthController extends Controller
         if ($user && Hash::check($request->password, $user->password)) {
             Log::info('Login success', ['user_id' => $user->id]);
             Auth::login($user);
-            return redirect()->route('home'); 
+
+
+            return redirect()->route('home')->with('success', 'Welcome back, ' . $user->username . '!');
+
         } else {
             Log::warning('Login failed', ['username' => $request->username]);
             return back()->with('error', 'Wrong username or password!');
         }
+
+
     }
 
     public function signup(Request $request)
@@ -55,7 +61,6 @@ class AuthController extends Controller
             'role_id' => 2
         ]);
 
-        Auth::login($user);
         Log::info('User registered', ['user_id' => $user->id]);
         return redirect()->route('home')->with('success', 'Account created successfully!');
     }

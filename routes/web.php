@@ -36,6 +36,9 @@ Route::get('/advance', [PageController::class, 'advance'])->name('advance');
 // Route untuk stage
 Route::get('/beginner/stage1/{id}', [QuestionController::class, 'show'])->name('stage1.show');
 Route::get('/beginner/stage2/{id}', [QuestionController::class, 'show'])->name('stage2.show');
+Route::get('/beginner/stage3/{id}', [QuestionController::class, 'show'])->name('stage3.show');
+Route::get('/beginner/stage4/{id}', [QuestionController::class, 'show'])->name('stage4.show');
+Route::get('/beginner/stage5/{id}', [QuestionController::class, 'show'])->name('stage5.show');
 
 // Route untuk submit jawaban
 Route::post('/submit-answer', [QuestionController::class, 'submitAnswer'])->name('submit.answer');
