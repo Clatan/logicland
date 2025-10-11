@@ -1,80 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LogicLand</title>
-    <link rel="icon" type="svg+xml" href="{{ asset('asset/logo.svg') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
-    @vite('resources/css/home.css')
-</head>
-<body>
-    <audio id="bg-audio" loop>
-        <source src="{{ asset('asset/audio.mp3') }}" type="audio/mpeg">
-    </audio>
+@extends('layouts.app')
 
-    <div class="navbar">
-        <div class="navbar-left">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
-        </div>
+@section('title', 'LogicLand')
 
-        <div class="navbar-center">
-            <img src="{{ asset('asset/logo-title.svg') }}" alt="logicland">
-        </div>
+@section('custom-css')
+    @vite(['resources/css/home.css'])
+@endsection
 
-        <div class="navbar-right">
-            <img id="audio-icon" src="{{ asset('asset/audio-on.svg') }}" alt="audio" onclick="toggleAudio()">
-            <img src="{{ asset('asset/setting.svg') }}" alt="setting">
-        </div>
+@section('content')
+
+<div class="navbar">
+    <div class="navbar-left">
+        <img src="{{ asset('asset/life.svg') }}" alt="life">
+        <img src="{{ asset('asset/life.svg') }}" alt="life">
+        <img src="{{ asset('asset/life.svg') }}" alt="life">
     </div>
-        
-    <div>
-        <a href="{{ url('/beginner') }}">
-            <img src="{{ asset('asset/island-spring.svg') }}" alt="Beginner" class="island-container top-left">
-        </a>
 
-        <a href="{{ url('/elementary') }}">
-            <img src="{{ asset('asset/island-summer.svg') }}" alt="Elementary" class="island-container top-right">
-        </a>
+    <div class="navbar-center">
+        <img src="{{ asset('asset/logo-title.svg') }}" alt="logicland">
+    </div>
 
-        <a href="{{ url('/intermediate') }}">
-            <img src="{{ asset('asset/island-autumn.svg') }}" alt="Intermediate" class="island-container bottom-left">
-        </a>
-
-        <a href="{{ url('/advance') }}">
-            <img src="{{ asset('asset/island-winter.svg') }}" alt="Advance" class="island-container bottom-right">
+    <div class="navbar-right">
+        <img id="audio-icon" src="{{ asset('asset/audio-on.svg') }}" alt="audio">
+        <a href="/setting" data-no-spa>
+            <img id="setting-btn" src="{{ asset('asset/setting.svg') }}" alt="setting">
         </a>
     </div>
+</div>
         
-    <img src="{{ asset('asset/bridge-1.svg') }}" alt="road" style="position: fixed; top: 195px; left: 500px; width: 270px;">
-    <img src="{{ asset('asset/bridge-2.svg') }}" alt="road" style="position: fixed; bottom: 250px; right: 620px; width: 220px;">
-    <img src="{{ asset('asset/bridge-3.svg') }}" alt="road" style="position: fixed; bottom: 170px; right: 510px; width: 200px; transform: rotate(-8deg);">
+<div>
+    <a href="{{ url('/beginner') }}" data-no-spa>
+        <img src="{{ asset('asset/island-spring.svg') }}" alt="Beginner" class="island-container top-left">
+    </a>
 
-    <script>
-        let audioPlaying = false;
-        const audioElement = document.getElementById('bg-audio');
-        const audioIcon = document.getElementById('audio-icon');
+    <a href="{{ url('/elementary') }}" data-no-spa>
+        <img src="{{ asset('asset/island-summer.svg') }}" alt="Elementary" class="island-container top-right">
+    </a>
 
-        function toggleAudio() {
-            if (audioPlaying) {
-                audioElement.pause();
-                audioIcon.src = "{{ asset('asset/audio-off.svg') }}";
-            } else {
-                audioElement.volume = 1;
-                audioElement.play();
-                audioIcon.src = "{{ asset('asset/audio-on.svg') }}";
-            }
-            audioPlaying = !audioPlaying;
-        }
+    <a href="{{ url('/intermediate') }}" data-no-spa>
+        <img src="{{ asset('asset/island-autumn.svg') }}" alt="Intermediate" class="island-container bottom-left">
+    </a>
 
-    </script>
-
-</body>
-
+    <a href="{{ url('/advance') }}" data-no-spa>
+        <img src="{{ asset('asset/island-winter.svg') }}" alt="Advance" class="island-container bottom-right">
+    </a>
+</div>
+    
+<img src="{{ asset('asset/bridge-1.svg') }}" alt="road" style="position: fixed; top: 195px; left: 500px; width: 270px;">
+<img src="{{ asset('asset/bridge-2.svg') }}" alt="road" style="position: fixed; bottom: 250px; right: 620px; width: 220px;">
+<img src="{{ asset('asset/bridge-3.svg') }}" alt="road" style="position: fixed; bottom: 170px; right: 510px; width: 200px; transform: rotate(-8deg);">
 
 <style>
     body {
@@ -89,4 +62,62 @@
         overflow: hidden;
     }
 </style>
-</html>
+@endsection
+
+@section('custom-js')
+<script type="module">
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById('bgMusic');
+    const audioBtn = document.getElementById('audio-btn');
+    const settingBtn = document.getElementById('setting-btn');
+
+    let isPlaying = localStorage.getItem('audioPlaying') === 'true';
+
+    // Atur icon awal sesuai status terakhir
+    audioBtn.src = isPlaying
+        ? "{{ asset('asset/audio-on.svg') }}"
+        : "{{ asset('asset/audio-off.svg') }}";
+
+    // Mainkan audio jika sebelumnya sedang aktif
+    if (isPlaying) {
+        audio.play().catch(() => {});
+    }
+
+    // Klik toggle audio
+    audioBtn.addEventListener('click', () => {
+        if (isPlaying) {
+            audio.pause();
+            audioBtn.src = "{{ asset('asset/audio-off.svg') }}";
+        } else {
+            audio.play().catch(() => {});
+            audioBtn.src = "{{ asset('asset/audio-on.svg') }}";
+        }
+        isPlaying = !isPlaying;
+        localStorage.setItem('audioPlaying', isPlaying);
+    });
+
+    // Hover efek audio
+    audioBtn.addEventListener('mouseenter', () => {
+        audioBtn.src = isPlaying
+            ? "{{ asset('asset/audio-turnoff.svg') }}"
+            : "{{ asset('asset/audio-turnon.svg') }}";
+    });
+
+    audioBtn.addEventListener('mouseleave', () => {
+        audioBtn.src = isPlaying
+            ? "{{ asset('asset/audio-on.svg') }}"
+            : "{{ asset('asset/audio-off.svg') }}";
+    });
+
+    // Hover efek setting
+    if (settingBtn) {
+        settingBtn.addEventListener('mouseenter', () => {
+            settingBtn.src = "{{ asset('asset/setting-hover.svg') }}";
+        });
+        settingBtn.addEventListener('mouseleave', () => {
+            settingBtn.src = "{{ asset('asset/setting.svg') }}";
+        });
+    }
+});
+</script>
+@endsection

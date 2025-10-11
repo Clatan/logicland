@@ -51,6 +51,11 @@ class PageController extends Controller
         return view('advance');
     }
 
+    public function setting()
+    {
+        return view('setting');
+    }
+
     // public function stage1()
     // {
     //     return view('beginner.stage1', compact('question'));

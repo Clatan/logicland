@@ -52,7 +52,7 @@
     text-align: center;
     text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Jolly Lodger";
-    font-size: 80px;
+    font-size: 82px;
     font-weight: 250;
     z-index: 10;
 }
@@ -61,14 +61,15 @@
     position: absolute;
     top: 28%;
     left: 50%;
-    transform: translate(-48%, 10%);
+    transform: translate(-48%, 50%);
     white-space: nowrap;
     color: #FFF;
     text-align: center;
     text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: "Jolly Lodger";
-    font-size: 28px;
-    font-weight: 200;
+    font-family: "Nunito";
+    font-size: clamp(16px, 1vw, 32px);
+    font-weight: 500;
+    overflow-wrap: break-word;
     z-index: 10;
 }
 
@@ -78,12 +79,12 @@
     }
 
     .about-title {
-        font-size: clamp(70px, 8vw, 100px);
+        font-size: clamp(58px, 6vw, 82px);
         top: 25%;
     }
 
     .about-caption {
-        font-size: clamp(24px, 3vw, 22px);
+        font-size: clamp(13px, 1vw, 22px);
         top: 25%;
     }
 }
@@ -94,12 +95,12 @@
     }
 
     .about-title {
-        font-size: clamp(60px, 8vw, 100px);
+        font-size: clamp(52px, 6vw, 90px);
         top: 22%;
     }
 
     .about-caption {
-        font-size: clamp(20px, 3vw, 22px);
+        font-size: clamp(12px, 1vw, 18px);
         top: 20%;
     }
 }
@@ -110,12 +111,12 @@
     }
 
     .about-title {
-        font-size: clamp(50px, 8vw, 100px);
+        font-size: clamp(38px, 6vw, 72px);
         top: 15%;
     }
 
     .about-caption {
-        font-size: clamp(16px, 2vw, 24px);
+        font-size: clamp(10px, 1vw, 16px);
         top: 15%;
     }
 }
@@ -126,20 +127,12 @@
     }
 
     .about-title {
-        font-size: clamp(36px, 8vw, 100px);
+        font-size: clamp(24px, 6vw, 42px);
         top: 10%;
     }
 
     .about-caption {
-        font-size: clamp(10px, 2vw, 24px);
+        font-size: clamp(6px, 1vw, 12px);
         top: 10%;
-    }
-
-    .button-cancel {
-    
-    }
-
-    .button-cancel:hover {
-       
     }
 }

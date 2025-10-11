@@ -11,13 +11,13 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -150px;
+    margin-top: -350px;
 }
 
 .button-cancel {
     background-image: url('../asset/cancel-small.svg');
     position: absolute;
-    top: 60px;      
+    top: -130px;      
     right: 200px;    
     width: 65px;    
     height: 64px;
@@ -27,8 +27,7 @@
 
 .button-cancel:hover {
     background-image: url('../asset/cancel-small-hover.svg');
-    position: absolute;
-     top: 60px;      
+    position: absolute;  
     right: 200px;    
     width: 65px;    
     height: 64px;
@@ -102,7 +101,7 @@ form {
     z-index: 10;
 }
 
-.login-button {
+.login {
     background-color: #61493D;
     color: #FFF;
     border: none;

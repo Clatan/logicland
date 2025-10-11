@@ -20,57 +20,49 @@
 
     @yield('content')
 
-    <script>
-        c const audio = document.getElementById('bg-audio');
-        const audioBtn = document.getElementById('audio-btn');
-        let isPlaying = false;
+<script type="module">
+    const audio = document.getElementById('bg-audio');
+    const audioBtn = document.getElementById('audio-btn');
+    let isPlaying = localStorage.getItem('audioPlaying') === 'true';
 
-        if (localStorage.getItem('audioPlaying') === 'true') {
-            audio.play().catch(() => {}); 
-            isPlaying = true;
+    window.addEventListener('DOMContentLoaded', () => {
+        if (isPlaying) {
+            audio.play().catch(() => {});
             audioBtn.src = "{{ asset('asset/audio-on.svg') }}";
+        } else {
+            audioBtn.src = "{{ asset('asset/audio-off.svg') }}";
         }
+    });
 
-        audioBtn.addEventListener('click', () => {
-            if (isPlaying) {
-                audio.pause();
-                audioBtn.src = "{{ asset('asset/audio-off.svg') }}";
-            } else {
-                audio.play();
-                audioBtn.src = "{{ asset('asset/audio-on.svg') }}";
-            }
-            isPlaying = !isPlaying;
-            localStorage.setItem('audioPlaying', isPlaying);
-        });
+    document.addEventListener('click', function (e) {
+        const link = e.target.closest('a');
+        if (link && link.href.startsWith(window.location.origin) && !link.hasAttribute('data-no-spa')) {
+            e.preventDefault();
 
-        audioBtn.addEventListener('mouseenter', () => {
-            if (isPlaying)
-                audioBtn.src = "{{ asset('asset/audio-turn-off.svg') }}";
-            else
-                audioBtn.src = "{{ asset('asset/audio-turn-on.svg') }}";
-        });
-        audioBtn.addEventListener('mouseleave', () => {
-            audioBtn.src = isPlaying
-                ? "{{ asset('asset/audio-on.svg') }}"
-                : "{{ asset('asset/audio-off.svg') }}";
-        });
+            fetch(link.href)
+                .then(res => res.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newContent = doc.getElementById('main-content').innerHTML;
+                    document.getElementById('main-content').innerHTML = newContent;
+                    window.history.pushState({}, '', link.href);
+                })
+                .catch(err => console.error(err));
+        }
+    });
 
-        document.addEventListener('click', function(e) {
-            const link = e.target.closest('a');
-            if (link && link.href.startsWith(window.location.origin)) {
-                e.preventDefault();
-                fetch(link.href)
-                    .then(res => res.text())
-                    .then(html => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, 'text/html');
-                        const newContent = doc.getElementById('main-content').innerHTML;
-                        document.getElementById('main-content').innerHTML = newContent;
-                        window.history.pushState({}, '', link.href);
-                    });
-            }
-        });
-    </script>
+    window.addEventListener('popstate', () => {
+        fetch(window.location.href)
+            .then(res => res.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const newContent = doc.getElementById('main-content').innerHTML;
+                document.getElementById('main-content').innerHTML = newContent;
+            });
+    });
+</script>
+@yield('custom-js')
 </body>
-
 </html>
