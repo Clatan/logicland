@@ -12,30 +12,29 @@
     <div class="setting-box">
         <img src="{{ asset('asset/bckg-setting.svg') }}" alt="bckgsetting" class="bckgsetting">
         <a href="\home" class="button-cancel" data-no-spa></a>
-        <h1 class="setting-title">Setting Account</h1>
-
+    
         <div class="main-container">
+            <h1 class="setting-title">Setting Account</h1>
             <div class="profile-container">
                 <div class="text-container">
-                    <p><strong>Username</strong></p>
-                    <p><strong>Email</strong></p>
+                    <p class="account2" >Username</p>
+                    <p class="account2">Email</p>
                 </div>
 
                 <div class="text-container">
-                    <p><strong>:</strong></p>
-                    <p><strong>:</strong></p>
+                    <p class="account1">:</p>
+                    <p class="account1">:</p>
                 </div>
 
                 <div class="text-container">
-                    <p>{{ $username ?? 'N/A' }}</p>
-                    <p>{{ $email ?? 'N/A' }}</p>
-
+                    <p class="account">{{ $username ?? 'N/A' }}</p>
+                    <p class="account">{{ $email ?? 'N/A' }}</p>
                 </div>
             </div>
 
             <form id="change-password-form" method="POST" action="{{ route('password.update') }}">
                 @csrf
-                <label>Current Password</label>
+                <label class="label">Current Password</label>
                 <input type="password" name="current_password" class="setting-input"
                     placeholder="Enter your current password" required>
                 {{-- Tampilkan error jika password lama salah --}}
@@ -44,7 +43,7 @@
                 @enderror
 
 
-                <label>New Password</label>
+                <label class="label">New Password</label>
                 <input type="password" name="new_password" class="setting-input" placeholder="Enter your new password"
                     required>
                 @error('new_password')
@@ -76,18 +75,16 @@
 
     <style>
         body {
-            background: url('{{ asset('asset/bckg.svg') }}');
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+     background: url('{{ asset('asset/bckg.svg') }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 110vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
         }
-
-
         .setting-box p,
         .setting-box h1,
         .setting-box h3,
