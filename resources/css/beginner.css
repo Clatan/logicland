@@ -1,0 +1,29 @@
+.stage1 {
+    position: absolute;
+    top: 330px;
+    left: 60px;
+}
+
+.stage2 {
+    position: absolute;
+    top: 300px;
+    left: 400px;
+}
+
+.stage3 {
+    position: absolute;
+    top: 430px;
+    left: 630px;
+}
+
+.stage4 {
+    position: absolute;
+    top: 680px;
+    right: 380px;
+}
+
+.stage5 {
+    position: absolute;
+    top: 800px;
+    right: 60px;
+}
