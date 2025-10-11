@@ -12,20 +12,29 @@ Route::get('/', function () {
     return view('load');
 });
 
-Route::get('/welcome', [PageController::class, 'welcome']);
-Route::get('/about', [PageController::class, 'about']);
-Route::get('/login', [PageController::class, 'login'])->name('login');
-Route::get('/signup', [PageController::class, 'signup']);
-Route::get('/home', [PageController::class, 'home'])->name('home');
-Route::get('/setting', [PageController::class, 'setting'])->name('setting');
+Route::middleware('web')->group(function () {
+    Route::get('/welcome', [PageController::class, 'welcome']);
+    Route::get('/about', [PageController::class, 'about']);
+    Route::get('/login', [PageController::class, 'login'])->name('login');
+    Route::get('/signup', [PageController::class, 'signup']);
+    Route::post('/login-post', [AuthController::class, 'login'])->name('login.post');
+    Route::post('/signup-post', [AuthController::class, 'signup'])->name('signup.post');
+    Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
+    
+    Route::middleware('auth')->group(function () {
+        Route::get('/home', [PageController::class, 'home'])->name('home');
+        
+        Route::get('/setting', [SettingController::class, 'index'])->name('setting');
+        Route::post('/change-password', [SettingController::class,'updatePassword'])->name('password.update');
+    });
+});
 
-Route::post('/login-post', [AuthController::class, 'login'])->name('login.post');
-Route::post('/signup-post', [AuthController::class, 'signup'])->name('signup.post');
-Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
-
-Route::get('/setting', [SettingController::class, 'index'])->name('setting');
-Route::post('/settings/update-password', [SettingController::class, 'updatePassword'])->name('setting.updatePassword');
-
+Route::post('/logout', function(){
+    Auth::logout(); 
+    session()->invalidate();
+    session()->regenerateToken(); 
+    return redirect('/login')->with('success','Logout successful');
+})->name('logout');
 
 // Route untuk pulau
 Route::get('/beginner', [PageController::class, 'beginner'])->name('beginner');

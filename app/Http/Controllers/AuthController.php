@@ -22,7 +22,8 @@ class AuthController extends Controller
 
         if ($user && Hash::check($request->password, $user->password)) {
             Log::info('Login success', ['user_id' => $user->id]);
-            Auth::login($user);
+            Auth::guard('web')->login($user);
+            $request->session()->regenerate();
             return redirect()->route('home'); 
         } else {
             Log::warning('Login failed', ['username' => $request->username]);
@@ -55,7 +56,8 @@ class AuthController extends Controller
             'role_id' => 2
         ]);
 
-        Auth::login($user);
+        Auth::guard('web')->login($user);
+        $request->session()->regenerate();
         Log::info('User registered', ['user_id' => $user->id]);
         return redirect()->route('home')->with('success', 'Account created successfully!');
     }

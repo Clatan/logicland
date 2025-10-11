@@ -13,6 +13,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: -30px;
+    z-index: 1;
 }
 
 .button-cancel {
@@ -53,8 +54,8 @@
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
     z-index: 10;
 }
 
@@ -72,7 +73,7 @@ form {
     font-weight: 800;
     transition: background-color 0.3s ease;
     z-index: 10;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .button-logout{
@@ -89,9 +90,136 @@ form {
     font-weight: 800;
     transition: background-color 0.3s ease;
     z-index: 10;
-    margin-top: 15px;
 }
 
 .button-change-password:hover, .button-logout:hover {
     background-color: #8C6E61;
+}
+
+p{
+    color: #8C6E61;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    margin: 5px 0;
+    font-size: 20px;
+    line-height: 27px;
+    z-index: 1000;
+}
+
+strong{
+    color: #61493D;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 27px;
+    margin-right: 20px;
+    z-index: 1000;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: left;
+    z-index: 1;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 500px;
+    text-align: left;
+    z-index: 1;
+}
+
+.text-overlay {
+    color: #FFF;
+    text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Jolly Lodger";
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 250;
+    z-index: 10;
+    line-height: normal;
+    position: absolute;
+    width: 100%;
+}
+
+.text-overlay-small{
+    color: #FFF;
+    text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Jolly Lodger";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 250;
+    z-index: 10;
+    text-align: left;
+    line-height: normal;
+    position: absolute;
+    width: 100%;
+}
+
+.setting-input {
+    background: transparent;
+    color: rgba(84, 79, 76, 0.75);
+    position: relative;
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #61493D;
+    border-radius: 5px;
+    font-size: 15px;
+    z-index: 1000;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+.setting-input:first-child {
+    margin-bottom: 5px; 
+    background: transparent;
+}
+
+.setting-input[type="password"] {
+    margin-bottom: 5px; 
+}
+
+.setting-input:focus {
+    outline: none;
+    border: 2px solid #61493D;
+    background: transparent;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+label {
+    color: #61493D;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+.error-message {
+    color: #e74c3c;
+    text-align: center;
+    font-family: 'Nunito';
+    font-size: 14px;
+    font-weight: 900;
+    width: 500px;
+    margin-top: -5px; 
+    margin-bottom: 10px; 
+    z-index: 100;
 }
