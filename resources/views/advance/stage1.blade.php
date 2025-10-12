@@ -4,6 +4,7 @@
 
 @section('custom-css')
     @vite(['resources/css/stage.css'])
+    @vite(['resources/css/map.css'])
 @endsection
 
 @section('content')

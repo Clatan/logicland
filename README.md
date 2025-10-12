@@ -1,7 +1,7 @@
 # 🌐 LogicLand
 
-*LogicLand* is an interactive learning platform designed to enhance *critical thinking, **logical reasoning, and **problem-solving skills* for *junior high school students*.  
-It provides level-based problem sets — from *Beginner* to *Advanced* — each containing *5 stages, along with **progress tracking* to monitor students’ achievements.
+*LogicLand* is an interactive learning platform designed to enhance *critical thinking, logical reasoning, and problem-solving skills* for *junior high school students*.  
+It provides level-based problem sets — from *Beginner* to *Advanced* — each containing *5 stages*, along with *progress tracking* to monitor students’ achievements.
 
 ---
 
@@ -32,67 +32,67 @@ It provides level-based problem sets — from *Beginner* to *Advanced* — each 
 ## 🚀 How to Run the Project
 
 ### 1. Clone the Repository
-bash
+```bash
 git clone https://github.com/your-username/logicland.git
 cd logicland
-
+```
 
 ### 2. Install Dependencies
 Make sure you have *Composer* and *Node.js* installed.
-bash
+```bash
 composer install
 npm install
-
+```
 
 ### 3. Set Up Environment File
-Copy .env.example to .env and adjust database settings:
-bash
+Copy `.env.example` to `.env` and adjust database settings:
+```bash
 cp .env.example .env
+```
 
-Edit your .env:
-
+Edit your `.env`:
+```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=logicland
 DB_USERNAME=root
 DB_PASSWORD=
-
+```
 
 ### 4. Generate Application Key
-bash
+```bash
 php artisan key:generate
-
+```
 
 ### 5. Run Migrations and Seeders (if available)
-bash
+```bash
 php artisan migrate --seed
-
+```
 
 ### 6. Run the Development Server
-bash
+```bash
 php artisan serve
+```
 
-Then open:
-
-http://localhost:8000
-
+Then open:  
+👉 http://localhost:8000
 
 ### 7. Compile Frontend Assets
 Run Vite in a separate terminal:
-bash
+```bash
 npm run dev
-
+```
 
 ---
 
 ## 🧾 Additional Notes
 - Make sure *MySQL* service is running.
-- Audio and visual assets are located under the /public/asset/ directory.
-- To stop the development server, press *CTRL + C*.
+- Audio and visual assets are located under `/public/asset/`.
+- To stop the development server, press **CTRL + C**.
 
 ---
 
 ## 🧑‍💻 Author
 Developed with ❤ by the *CapCipCup Team* — featuring  
-*Zhang Yu Ling, **Chen Fei Ying, and **Chen Cai Mei*.
+**Zhang Yu Ling**, **Chen Fei Ying**, and **Chen Cai Mei**.
