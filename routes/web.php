@@ -25,6 +25,7 @@ Route::middleware('web')->group(function () {
     Route::get('/elementary', [MapController::class, 'showElementaryMap']);
     Route::get('/intermediate', [MapController::class, 'showIntermediateMap']);
     Route::get('/advance', [MapController::class, 'showAdvanceMap']);
+    Route::get('/user/attempts', [QuestionController::class, 'getAttempts'])->name('user.attempts');
     
     Route::middleware('auth')->group(function () {
         Route::get('/home', [MapController::class, 'home'])->name('home')->middleware('web');
