@@ -1,40 +1,37 @@
 .stage1 {
     position: absolute;
-    top: 480px;
+    top: 500px;
     left: 60px;
 }
 
 .stage2 {
     position: absolute;
-    top: 400px;
-    left: 560px;
+    top: 510px;
+    left: 500px;
 }
 
 .stage3 {
     position: absolute;
-    top: 650px;
-    right: 700px;
+    top: 700px;
+    right: 620px;
 }
 
 .stage4 {
     position: absolute;
-    bottom: -300px;
-    right: 500px;
+    bottom: -360px;
+    right: 400px;
 }
 
 .stage5 {
     position: absolute;
-    bottom: -350px;
-    right: 40px;
+    bottom: -370px;
+    right: 20px;
 }
-
-
 
 .button-stage.locked {
     filter: grayscale(100%);
     pointer-events: none;
     cursor: not-allowed;
-    /* position: relative; */
 }
 
 .button-stage.locked .lock-icon {
@@ -44,12 +41,9 @@
     transform: translateX(-50%);
     width: 30px;
     height: 30px;
-    /* z-index: 9999; */
     pointer-events: none;
-    /* biar tidak mengganggu klik */
 }
 
-/* layar sisa 1/5 fullscreen */
 @media (min-width: 992px) {
     .stage1 {
         width: 20%;
@@ -102,7 +96,6 @@
     }
 }
 
-/* setengah halaman lebih dikit */
 @media (max-width: 900px) {
     .stage1 {
         width: 20%;
@@ -150,7 +143,6 @@
     }
 }
 
-/*mobile phone */
 @media (max-width: 768px) {
     .stage1 {
         width: 20%;

@@ -89,16 +89,6 @@
     </script>
 
     <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-            overflow-y: auto;
-            background-color: #000;
-        }
 
         body {
             background: url('{{ asset('asset/map-spring/bckg-spring.svg') }}') no-repeat top left;
@@ -108,7 +98,6 @@
             display: flex;
         }
 
-        /* mobile phone view */
         @media (max-width: 768px) {
             body {
                 background: url('asset/map-spring/spring.svg') no-repeat top left;
