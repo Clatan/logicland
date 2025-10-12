@@ -47,44 +47,17 @@
     pointer-events: none; /* biar tidak mengganggu klik */
 }
 
-@media (max-width: 1200px) {
-    body{
-        background: url('asset/map-autumn/bckg-autumn.svg') repeat top left;
-        background-size: 100% auto;
-        background-attachment: scroll;
-        height: 120vh;
-        display: flex;
-    }
+
+@media (min-width: 1024px) {
+
 }
 
-@media (max-width: 1024px) {
-    body{
-        background: url('asset/map-autumn/bckg-autumn.svg') repeat top left;
-        background-size: 100%;
-        background-attachment: scroll;
-        height: 180vh;
-        display: flex;
-    }
-}
-
-@media (max-width: 992px){
-    body{
-        background: url('asset/map-autumn/bckg-autumn.svg') repeat top left;
-        background-size: 100% auto;
-        background-attachment: scroll;
-        height: 120vh;
-        display: flex;
-    }
+@media (min-width: 992px){
+  
 }
 
 @media (max-width: 900px) {
-    body{
-        background: url('asset/map-autumn/bckg-autumn.svg') repeat top left;
-        background-size: 100% auto;
-        background-attachment: scroll;
-        height: 100vh;
-        display: flex;
-    }
+
 }
 
 @media (max-width: 768px) {
