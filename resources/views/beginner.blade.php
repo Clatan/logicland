@@ -56,7 +56,7 @@
         @endphp
 
         @foreach ($stages as $stage => $url)
-            <a href="{{ $stage <= $currentStage ? $url : '#' }}"
+            <a href="{{ $stage <= $currentStage ? $url : '#' }}" data-no-spa
                 class="button-stage stage{{ $stage }} {{ $stage > $currentStage ? 'locked' : '' }}">
                 <img src="{{ asset('asset/map-spring/spring' . $stage . '.svg') }}" alt="stage">
             </a>

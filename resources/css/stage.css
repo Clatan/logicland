@@ -42,20 +42,6 @@
     cursor: pointer;
 }
 
-.text-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #FFF;
-    text-align: center;
-    text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: "Jolly Lodger";
-    font-size: 72px;
-    font-weight: 250;
-    margin: 0;
-    pointer-events: none;
-}
 
 .button-back {
     width: 65px;    
@@ -135,32 +121,58 @@
     z-index: 9999;
 }
 
-/* Kotak popup */
-.popup-box {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 320px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    border: 2px solid #333; /* outline effect */
+.popup-header {
+    font-family: "Jolly Lodger";
+    font-size: 72px;
+    font-weight: 250;
+    margin-bottom: 10px;
+
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #61493D;
+
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+
+    color: #61493D;
+    line-height: 1;
 }
 
-/* Teks popup */
+.popup-box {
+    position: relative;
+    background: #FFEED2;
+    
+    padding: 40px;
+    border-radius: 20px;
+    width: 450px; 
+    max-width: 90%;
+    text-align: center;
+    
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.2), 
+        0 0 0 5px rgba(255, 255, 255, 0.3) inset,
+        0 0 0 8px #61493D inset; 
+        
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: floating 3s ease-in-out infinite alternate;
+}
+
 .popup-text {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 16px;
+    font-family: 'Nunito';
+    margin-bottom: 20px;
 }
 
-/* Container tombol */
 .popup-buttons {
     display: flex;
     justify-content: space-between;
     gap: 8px;
+    flex-direction: row;
+    width: 100%;
 }
 
-/* Tombol dasar */
 .btn {
     flex: 1;
     padding: 8px;
@@ -172,24 +184,34 @@
     display: inline-block;
 }
 
-/* Warna tombol berbeda */
 .btn-home {
-    background-color: #1e40af; /* biru */
-    border: 2px solid #1e40af;
+    background-color: #E3AE7A;
+    border: 2px solid #d8a36d;
+    font-family: 'Nunito';
 }
 
 .btn-retry {
-    background-color: #b45309; /* kuning/orange */
-    border: 2px solid #b45309;
+    background-color: #906F5C;
+    border: 2px solid #876753;
+    font-family: 'Nunito';
 }
 
-.btn-next {
-    background-color: #166534; /* hijau */
-    border: 2px solid #166534;
+.btn-next {   
+    background-color: #61493D; 
+    border: 2px solid #5B4439;
+    font-family: 'Nunito';
 }
 
-/* Hover effect */
 .btn:hover {
     opacity: 0.9;
 }
 
+.status-success {
+    color: #4CAF50; 
+    font-size: 14px;
+}
+
+.status-failed {
+    color: #F44336;
+    font-size: 14px;
+}
