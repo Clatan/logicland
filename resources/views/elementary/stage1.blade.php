@@ -98,7 +98,7 @@
         html,
         body {
             background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat center center;
-            background-size: 100% auto;
+           background-size: cover;
             background-attachment: scroll;
             display: flex;
             justify-content: center;

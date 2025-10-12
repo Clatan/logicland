@@ -105,6 +105,7 @@
             align-items: flex-start;
             background-color: #000;
             background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat top left;
+         background-size: cover;
             overflow: hidden;
             */
         }

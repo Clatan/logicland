@@ -57,25 +57,25 @@
             </div>
 
             @if (session('popup_status'))
-            <div class="popup-overlay">
-                <div class="popup-box">
-                    <p class="popup-header">Stage {{ $question->question_id }}</p>
-                    <p class="popup-text @if(session('popup_status') === 'Success')
-                                            status-success
+                <div class="popup-overlay">
+                    <div class="popup-box">
+                        <p class="popup-header">Stage {{ $question->question_id }}</p>
+                        <p
+                            class="popup-text @if (session('popup_status') === 'Success') status-success
                                         @else
-                                            status-failed
-                                        @endif">{{ session('popup_message') }}</p>
-                    
-                    <div class="popup-buttons">
-                        <a href="{{ url('/home') }}" class="btn btn-home" data-no-spa>Home</a>
-                        <a href="{{ url('/beginner/stage3/3') }}" class="btn btn-retry" data-no-spa>Retry</a>
-                        @if(session('popup_status') === 'Success' && $question->question_id === session('user_stage_id'))
-                            <a href="{{ url('/beginner') }}" class="btn btn-next" data-no-spa>Next Stage</a>
-                        @endif
+                                            status-failed @endif">
+                            {{ session('popup_message') }}</p>
+
+                        <div class="popup-buttons">
+                            <a href="{{ url('/home') }}" class="btn btn-home" data-no-spa>Home</a>
+                            <a href="{{ url('/beginner/stage3/3') }}" class="btn btn-retry" data-no-spa>Retry</a>
+                            @if (session('popup_status') === 'Success' && $question->question_id === session('user_stage_id'))
+                                <a href="{{ url('/beginner') }}" class="btn btn-next" data-no-spa>Next Stage</a>
+                            @endif
+                        </div>
                     </div>
                 </div>
-            </div>
-            {{-- <script>
+                {{-- <script>
                 document.addEventListener('DOMContentLoaded', () => {
                     const overlay = document.getElementById('popupOverlay');
                     overlay.style.display = 'flex'; 
@@ -87,47 +87,49 @@
                     });
                 });
             </script> --}}
-        @endif
+            @endif
 
-    </div>
+        </div>
 
 
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            background-color: #000;
-            background: url('{{ asset('asset/map-spring/bckg-spring.svg') }}') no-repeat top left;
-            overflow: hidden;
-            */
-        }
-    </style>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                background-color: #000;
+                background: url('{{ asset('asset/map-spring/bckg-spring.svg') }}') no-repeat top left;
 
-    <script>
-        function updateAttempts() {
-            fetch('/user/attempts')
-                .then(response => response.json())
-                .then(data => {
-                    const container = document.getElementById('life-container');
-                    container.innerHTML = ''; // kosongkan dulu
-                    for (let i = 0; i < data.attempt_remaining; i++) {
-                        const img = document.createElement('img');
-                        img.src = '{{ asset('asset/life.svg') }}';
-                        img.alt = 'life';
-                        container.appendChild(img);
-                    }
-                });
-        }
+                background-size: cover;
+                overflow: hidden;
+                */
+            }
+        </style>
 
-        // update setiap 2 detik
-        setInterval(updateAttempts, 2000);
-        updateAttempts(); // panggil langsung saat page load
-    </script>
+        <script>
+            function updateAttempts() {
+                fetch('/user/attempts')
+                    .then(response => response.json())
+                    .then(data => {
+                        const container = document.getElementById('life-container');
+                        container.innerHTML = ''; // kosongkan dulu
+                        for (let i = 0; i < data.attempt_remaining; i++) {
+                            const img = document.createElement('img');
+                            img.src = '{{ asset('asset/life.svg') }}';
+                            img.alt = 'life';
+                            container.appendChild(img);
+                        }
+                    });
+            }
 
-@endsection
+            // update setiap 2 detik
+            setInterval(updateAttempts, 2000);
+            updateAttempts(); // panggil langsung saat page load
+        </script>
+
+    @endsection
