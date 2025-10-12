@@ -66,12 +66,12 @@
 
 .top-left {
     top: 60px;
-    left: 150px;
+    left: 140px;
 }
 
 .top-right {
     top: 90px;
-    right: 370px;
+    right: 280px;
 }
 
 .bottom-left {
@@ -80,106 +80,154 @@
 }
 
 .bottom-right {
-    bottom: 20px;
-    right: 165px;
+    bottom: 30px;
+    right: 80px;
 }
 
 .road1 {
     position: fixed;
-    top: 195px;
-    left: 500px;
+    top: 230px;
+    left: 560px;
     width: 270px;
+    z-index: 10;
 }
 
 .road2 {
     position: fixed;
-    bottom: 250px;
-    right: 620px;
-    width: 220px;
+    top: 350px;
+    right: 540px;
+    width: 280px;
+    z-index: 10;
 }
 
 .road3 {
     position: fixed;
-    bottom: 170px;
-    right: 510px;
+    bottom: 200px;
+    right: 500px;
     width: 200px;
     transform: rotate(-8deg);
+    z-index: 10;
 }
 
 .island-container.locked {
     filter: grayscale(100%);
     pointer-events: none;
     cursor: not-allowed;
-    /* opacity: 0.5; opsional */
 }
 
-@media (max-width: 1200px) {
+@media (max-height: 1024px){
 
     .beginner,
     .elementary,
     .intermediate,
     .advance {
-        width: 34%;
+        width: 24%;
     }
 
-    .beginner {
-        transform: translate(-100px, 20px);
+    .top-left{
+        top: 60px;
+        left: 180px;
     }
 
-    .elementary {
-        transform: translate(350px, 80px);
+    .top-right{
+        top: 90px;
+        right: 360px;
     }
 
-    .intermediate {
-        transform: translate(-360px, -80px);
+    .road1{
+        width: 280px;
+        top: 185px;
+        left: 515px;
+        z-index: 10;
     }
 
-    .advance {
-        transform: translate(140px, -20px);
+    .road2{
+        width: 220px;
+        top: 280px;
+        right: 580px;
+        z-index: 10;
     }
 
-    .beginner:hover {
-        transform: translate(-100px, 20px) scale(1.1);
+    .bottom-left{
+        bottom: 50px;
+        left: 450px;
     }
 
-    .elementary:hover {
-        transform: translate(350px, 80px) scale(1.1);
+    .bottom-right{
+        bottom: 30px;
+        right: 150px;
     }
 
-    .intermediate:hover {
-        transform: translate(-360px, -150px) scale(1.1);
+    .road3{
+        width: 180px;
+        bottom: 170px;
+        right: 515px;
+        z-index: 10;
     }
 
-    .advance:hover {
-        transform: translate(140px, -20px) scale(1.1);
+    .bottom-right{
+        bottom: 30px;
+        right: 180px;
     }
-
-    .road1 {
-        width: 300px;
-        top: 260px;
-        left: 400px;
-        rotate: 20deg;
-        z-index: -1;
-    }
-
-    .road2 {
-        width: 300px;
-        bottom: 250px;
-        right: 300px;
-        rotate: 10deg;
-        z-index: -1;
-    }
-
-    .road3 {
-        width: 300px;
-        bottom: 140px;
-        left: 400px;
-        rotate: 10deg;
-        z-index: -1;
-    }
-
+    
 }
 
+@media (min-height: 780px){
+
+    .beginner,
+    .elementary,
+    .intermediate,
+    .advance {
+        width: 28%;
+    }
+
+    .top-left{
+        top: 80px;
+        left: 120px;
+    }
+
+    .top-right{
+        top: 110px;
+        right: 360px;
+    }
+
+    .road1{
+        width: 260px;
+        top: 240px;
+        left: 520px;
+        z-index: 10;
+    }
+
+    .road2{
+        width: 260px;
+        top: 360px;
+        right: 600px;
+        z-index: 10;
+    }
+
+    .bottom-left{
+        bottom: 60px;
+        left: 370px;
+    }
+
+    .bottom-right{
+        bottom: 50px;
+        right: -50px;
+    }
+
+    .road3{
+        width: 180px;
+        bottom: 210px;
+        right: 580px;
+        z-index: 10;
+    }
+
+    .bottom-right{
+        bottom: 30px;
+        right: 180px;
+    }
+    
+}
 
 @media (max-width: 1024px) {
 
