@@ -39,7 +39,6 @@ cd logicland
 
 ### 2. Install Dependencies
 Make sure you have *Composer* and *Node.js* installed.
-
 bash
 composer install
 npm install

@@ -82,7 +82,7 @@
             @endphp
             <a href="{{ $locked ? '#' : $url }}" data-no-spa
                 class="button-stage stage{{ $viewStage }} {{ $locked ? 'locked' : '' }}">
-                <img src="{{ asset('asset/map-summer/summer' . $viewStage . '.svg') }}" alt="stage">
+                <img src="{{ asset('asset/map-autumn/autumn' . $viewStage . '.svg') }}" alt="stage">
             </a>
         @endforeach
 

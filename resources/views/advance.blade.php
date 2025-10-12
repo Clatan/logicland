@@ -82,7 +82,7 @@
             @endphp
             <a href="{{ $locked ? '#' : $url }}" data-no-spa
                 class="button-stage stage{{ $viewStage }} {{ $locked ? 'locked' : '' }}">
-                <img src="{{ asset('asset/map-summer/summer' . $viewStage . '.svg') }}" alt="stage">
+                <img src="{{ asset('asset/map-winter/winter' . $viewStage . '.svg') }}" alt="stage">
             </a>
         @endforeach
     </div>
@@ -133,7 +133,7 @@
 
             @media (min-width: 1024px) {
                 body {
-                    background: url('asset/map-summer/bckg-summer.svg') no-repeat top left;
+                    background: url('asset/map-winter/bckg-winter.svg') no-repeat top left;
                     background-size: 100% auto;
                     height: 120vh;
                     width: 100%;
