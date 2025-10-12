@@ -28,6 +28,25 @@
     right: 40px;
 }
 
+.button-stage.locked { 
+   
+    filter: grayscale(100%); 
+    pointer-events: none; 
+    cursor: not-allowed; 
+    /* position: relative; */
+}
+
+.button-stage.locked .lock-icon {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    /* z-index: 9999; */
+    pointer-events: none; /* biar tidak mengganggu klik */
+}
+
 @media (max-width: 1200px) {
     body{
         background: url('asset/map-autumn/bckg-autumn.svg') repeat top left;

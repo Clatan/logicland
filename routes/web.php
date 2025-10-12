@@ -22,9 +22,12 @@ Route::middleware('web')->group(function () {
     Route::post('/signup-post', [AuthController::class, 'signup'])->name('signup.post');
     Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
     Route::get('/beginner', [MapController::class, 'showBeginnerMap']);
+    Route::get('/elementary', [MapController::class, 'showElementaryMap']);
+    Route::get('/intermediate', [MapController::class, 'showIntermediateMap']);
+    Route::get('/advance', [MapController::class, 'showAdvanceMap']);
     
     Route::middleware('auth')->group(function () {
-        Route::get('/home', [PageController::class, 'home'])->name('home')->middleware('web');
+        Route::get('/home', [MapController::class, 'home'])->name('home')->middleware('web');
         Route::get('/setting', [SettingController::class, 'index'])->name('setting');
         Route::post('/change-password', [SettingController::class,'updatePassword'])->name('password.update');
     });
@@ -42,9 +45,9 @@ Route::get('/user/attempts', [QuestionController::class, 'getAttempts']);
 
 // Route untuk pulau
 
-Route::get('/elementary', [PageController::class, 'elementary'])->name('elementary');
-Route::get('/intermediate', [PageController::class, 'intermediate'])->name('intermediate');
-Route::get('/advance', [PageController::class, 'advance'])->name('advance');
+// Route::get('/elementary', [PageController::class, 'elementary'])->name('elementary');
+// Route::get('/intermediate', [PageController::class, 'intermediate'])->name('intermediate');
+// Route::get('/advance', [PageController::class, 'advance'])->name('advance');
 
 // Route untuk stage
 Route::get('/beginner/stage1/{id}', [QuestionController::class, 'show'])->name('stage1.show');

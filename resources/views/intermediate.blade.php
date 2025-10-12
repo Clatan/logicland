@@ -18,7 +18,7 @@
             </div>
 
             <div class="navbar-left" id="life-container">
-               
+
             </div>
 
             <div class="navbar-center">
@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <a href="{{ url('/intermediate/stage1/1') }}" data-no-spa>
+        {{-- <a href="{{ url('/intermediate/stage1/1') }}" data-no-spa>
             <img src="{{ asset('asset/map-autumn/autumn1.svg') }}" alt="stage" class="stage1 button-stage">
         </a>
 
@@ -49,8 +49,37 @@
 
         <a href="{{ url('/intermediate/stage5/5') }}" data-no-spa>
             <img src="{{ asset('asset/map-autumn/autumn5.svg') }}" alt="stage" class="stage5 button-stage">
-        </a>
+        </a> --}}
 
+        @php
+            $stages = [
+                1 => '/intermediate/stage1/1',
+                2 => '/intermediate/stage2/2',
+                3 => '/intermediate/stage3/3',
+                4 => '/intermediate/stage4/4',
+                5 => '/intermediate/stage5/5',
+            ];
+
+            // Mapping view stage -> stage_id di DB
+            $stageIdMap = [
+                1 => 11,
+                2 => 12,
+                3 => 13,
+                4 => 14,
+                5 => 15,
+            ];
+        @endphp
+
+        @foreach ($stages as $viewStage => $url)
+            @php
+                $dbStageId = $stageIdMap[$viewStage];
+                $locked = $dbStageId > $currentStage;
+            @endphp
+            <a href="{{ $locked ? '#' : $url }}" data-no-spa
+                class="button-stage stage{{ $viewStage }} {{ $locked ? 'locked' : '' }}">
+                <img src="{{ asset('asset/map-summer/summer' . $viewStage . '.svg') }}" alt="stage">
+            </a>
+        @endforeach
 
         <style>
             body {
