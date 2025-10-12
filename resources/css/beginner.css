@@ -28,6 +28,14 @@
     right: 40px;
 }
 
+.button-stage.locked {
+    filter: grayscale(100%);
+    /* opacity: 0.5; */
+    pointer-events: none; /* tidak bisa diklik */
+    cursor: not-allowed;
+}
+
+
 @media (max-width: 1200px) {
     body{
         background: url('asset/map-spring/bckg-spring.svg') repeat top left;

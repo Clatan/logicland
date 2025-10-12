@@ -33,7 +33,13 @@ class PageController extends Controller
 
     public function beginner()
     {
-        return view('beginner');
+        $user_id = auth()->id();
+        $progress = Progress::where('user_id', $user_id)->first();
+
+        $currentStage = $progress->stage_id ?? 1;
+
+        return view('beginner.map', compact('currentStage'));
+
     }
     
     public function elementary()
