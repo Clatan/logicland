@@ -6,6 +6,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\MapController;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -20,6 +21,7 @@ Route::middleware('web')->group(function () {
     Route::post('/login-post', [AuthController::class, 'login'])->name('login.post');
     Route::post('/signup-post', [AuthController::class, 'signup'])->name('signup.post');
     Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
+    Route::get('/beginner', [MapController::class, 'showBeginnerMap']);
     
     Route::middleware('auth')->group(function () {
         Route::get('/home', [PageController::class, 'home'])->name('home')->middleware('web');
@@ -39,7 +41,7 @@ Route::post('/logout', function(){
 Route::get('/user/attempts', [QuestionController::class, 'getAttempts']);
 
 // Route untuk pulau
-Route::get('/beginner', [PageController::class, 'beginner'])->name('beginner');
+
 Route::get('/elementary', [PageController::class, 'elementary'])->name('elementary');
 Route::get('/intermediate', [PageController::class, 'intermediate'])->name('intermediate');
 Route::get('/advance', [PageController::class, 'advance'])->name('advance');

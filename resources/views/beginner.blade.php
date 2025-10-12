@@ -17,7 +17,7 @@
                     onmouseout="this.src='{{ asset('asset/back.svg') }}'">
             </div>
 
-            <div class="navbar-left"  id="life-container">
+            <div class="navbar-left" id="life-container">
 
             </div>
             <div class="navbar-center">
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <a href="{{ url('/beginner/stage1/1') }}" data-no-spa>
+        {{-- <a href="{{ url('/beginner/stage1/1') }}" data-no-spa>
             <img src="{{ asset('asset/map-spring/spring1.svg') }}" alt="stage" class="stage1 button-stage">
         </a>
         <a href="{{ url('/beginner/stage2/2') }}" data-no-spa>
@@ -43,7 +43,25 @@
         </a>
         <a href="{{ url('/beginner/stage5/5') }}" data-no-spa>
             <img src="{{ asset('asset/map-spring/spring5.svg') }}" alt="stage" class="stage5 button-stage">
-        </a>
+        </a> --}}
+
+        @php
+            $stages = [
+                1 => '/beginner/stage1/1',
+                2 => '/beginner/stage2/2',
+                3 => '/beginner/stage3/3',
+                4 => '/beginner/stage4/4',
+                5 => '/beginner/stage5/5',
+            ];
+        @endphp
+
+        @foreach ($stages as $stage => $url)
+            <a href="{{ $stage <= $currentStage ? $url : '#' }}"
+                class="button-stage stage{{ $stage }} {{ $stage > $currentStage ? 'locked' : '' }}">
+                <img src="{{ asset('asset/map-spring/spring' . $stage . '.svg') }}" alt="stage">
+            </a>
+        @endforeach
+
 
         <style>
             html,
