@@ -64,7 +64,7 @@
     });
 
     document.addEventListener("DOMContentLoaded", () => {
-            const audio = document.getElementById('bgMusic');
+            const audio = document.getElementById('bg-audio');
             const audioBtn = document.getElementById('audio-btn');
             const settingBtn = document.getElementById('setting-btn');
 

@@ -24,8 +24,13 @@
                 <P class="text-overlay">Stage {{ $question->question_id }}</P>
             </div>
             <div class="navbar-right">
-                <img id="audio-icon" src="{{ asset('asset/audio-on.svg') }}" alt="audio" onclick="toggleAudio()">
-                <img src="{{ asset('asset/setting.svg') }}" alt="setting">
+                <img id="audio-btn" src="{{ asset('asset/audio-on.svg') }}" alt="audio">
+                <a href="/setting" data-no-spa>
+                    <img id="setting-btn" src="{{ asset('asset/setting.svg') }}" alt="setting">
+                </a>
+                <audio id="bgMusic" loop>
+                    <source src="{{ asset('asset/bg-music.mp3') }}" type="audio/mpeg">
+                </audio>
             </div>
         </div>
 
@@ -71,7 +76,7 @@
                         <div class="popup-buttons">
                             <a href="{{ url('/home') }}" class="btn btn-home" data-no-spa>Home</a>
                             <a href="{{ url('/beginner/stage1/1') }}" class="btn btn-retry" data-no-spa>Retry</a>
-                            @if (session('popup_status') === 'Success' && $question->question_id === session('user_stage_id'))
+                            @if (session('popup_status') === 'Success')
                                 <a href="{{ url('/beginner') }}" class="btn btn-next" data-no-spa>Next Stage</a>
                             @endif
                         </div>

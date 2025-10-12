@@ -23,8 +23,13 @@
             <P class="text-overlay">Stage {{ $question->question_id }}</P>
         </div>
         <div class="navbar-right">
-            <img id="audio-icon" src="{{ asset('asset/audio-on.svg') }}" alt="audio" onclick="toggleAudio()">
-            <img src="{{ asset('asset/setting.svg') }}" alt="setting">
+            <img id="audio-btn" src="{{ asset('asset/audio-on.svg') }}" alt="audio">
+            <a href="/setting" data-no-spa>
+                <img id="setting-btn" src="{{ asset('asset/setting.svg') }}" alt="setting">
+            </a>
+            <audio id="bgMusic" loop>
+                <source src="{{ asset('asset/bg-music.mp3') }}" type="audio/mpeg">
+            </audio>
         </div>
     </div>
 
@@ -61,16 +66,16 @@
             <div class="popup-overlay">
                 <div class="popup-box">
                     <p class="popup-header">Stage {{ $question->question_id }}</p>
-                    <p class="popup-text @if(session('popup_status') === 'Success')
-                                            status-success
+                    <p
+                        class="popup-text @if (session('popup_status') === 'Success') status-success
                                         @else
-                                            status-failed
-                                        @endif">{{ session('popup_message') }}</p>
-                    
+                                            status-failed @endif">
+                        {{ session('popup_message') }}</p>
+
                     <div class="popup-buttons">
                         <a href="{{ url('/home') }}" class="btn btn-home" data-no-spa>Home</a>
                         <a href="{{ url('/elementary/stage2/2') }}" class="btn btn-retry" data-no-spa>Retry</a>
-                        @if(session('popup_status') === 'Success')
+                        @if (session('popup_status') === 'Success')
                             <a href="{{ url('/elementary') }}" class="btn btn-next" data-no-spa>Next Stage</a>
                         @endif
                     </div>
@@ -105,7 +110,7 @@
             align-items: flex-start;
             background-color: #000;
             background: url('{{ asset('asset/map-summer/bckg-summer.svg') }}') no-repeat top left;
-         background-size: cover;
+            background-size: cover;
             overflow: hidden;
             */
         }

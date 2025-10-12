@@ -8,40 +8,16 @@ use App\Models\Progress;
 
 class QuestionController extends Controller
 {
+   
     public function getAttempts()
     {
         $user_id = auth()->id();
         $progress = Progress::where('user_id', $user_id)->first();
 
-        $max_attempts = 3;
-        $attempt_remaining = $progress->attempt_remaining;
-        $last_update = $progress->updated_at;
-
-        // hitung tambahan attempt
-        $minutesSinceUpdate = now()->diffInMinutes($last_update);
-        $regenAttempts = floor($minutesSinceUpdate / 30); // 1 attempt per 30 menit
-
-        $attempt_remaining = min($attempt_remaining + $regenAttempts, $max_attempts);
-
-        // hitung sisa detik sampai next attempt
-        $nextAttemptInSec = ($regenAttempts < $max_attempts - $progress->attempt_remaining) ?
-            30*60 - ($minutesSinceUpdate % 30)*60 : null;
-
         return response()->json([
-            'attempt_remaining' => $attempt_remaining,
-            'next_attempt_in_sec' => $nextAttemptInSec
+            'attempt_remaining' => $progress->attempt_remaining
         ]);
     }
-
-    // public function getAttempts()
-    // {
-    //     $user_id = auth()->id();
-    //     $progress = Progress::where('user_id', $user_id)->first();
-
-    //     return response()->json([
-    //         'attempt_remaining' => $progress->attempt_remaining
-    //     ]);
-    // }
 
 
     public function show($id)

@@ -7,6 +7,7 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\AttemptController;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -25,12 +26,14 @@ Route::middleware('web')->group(function () {
     Route::get('/elementary', [MapController::class, 'showElementaryMap']);
     Route::get('/intermediate', [MapController::class, 'showIntermediateMap']);
     Route::get('/advance', [MapController::class, 'showAdvanceMap']);
-    Route::get('/user/attempts', [QuestionController::class, 'getAttempts'])->name('user.attempts');
-    
+     Route::get('/user/attempts', [QuestionController::class, 'getAttempts'])->name('user.attempts');
+   
     Route::middleware('auth')->group(function () {
         Route::get('/home', [MapController::class, 'home'])->name('home')->middleware('web');
         Route::get('/setting', [SettingController::class, 'index'])->name('setting');
         Route::post('/change-password', [SettingController::class,'updatePassword'])->name('password.update');
+       
+       
     });
 });
 
@@ -42,7 +45,7 @@ Route::post('/logout', function(){
 })->name('logout');
 
 // route life
-Route::get('/user/attempts', [QuestionController::class, 'getAttempts']);
+// Route::get('/user/attempts', [QuestionController::class, 'getAttempts']);
 
 // Route untuk pulau
 

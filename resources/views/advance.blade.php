@@ -26,8 +26,13 @@
             </div>
 
             <div class="navbar-right">
-                <img id="audio-icon" src="{{ asset('asset/audio-on.svg') }}" alt="audio" onclick="toggleAudio()">
-                <img src="{{ asset('asset/setting.svg') }}" alt="setting">
+                <img id="audio-btn" src="{{ asset('asset/audio-on.svg') }}" alt="audio">
+                <a href="/setting" data-no-spa>
+                    <img id="setting-btn" src="{{ asset('asset/setting.svg') }}" alt="setting">
+                </a>
+                <audio id="bgMusic" loop>
+                    <source src="{{ asset('asset/bg-music.mp3') }}" type="audio/mpeg">
+                </audio>
             </div>
         </div>
 
