@@ -17,9 +17,13 @@
         </div>
 
         <div class="navbar-left">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
+            @php
+                $attempts = session('attempt_remaining', 0); // default 0 kalau nggak ada
+            @endphp
+
+            @for ($i = 0; $i < $attempts; $i++)
+                <img src="{{ asset('asset/life.svg') }}" alt="life">
+            @endfor
         </div>
         <div class="navbar-center">
             <P class="text-overlay">Stage {{ $question->question_id }}</P>
@@ -64,9 +68,9 @@
                 <div class="popup-box">
                     <p class="popup-text">{{ session('popup_status') }}</p>
                     <div class="popup-buttons">
-                        <a href="{{ url('/home') }}" class="btn btn-home">Home</a>
-                        <a href="{{ url('/beginner/stage1/1') }}" class="btn btn-retry">Retry</a>
-                        <a href="{{ url('/beginner') }}" class="btn btn-next">Next Stage</a>
+                        <a href="{{ url('/home') }}" class="btn btn-home" data-no-spa>Home</a>
+                        <a href="{{ url('/beginner/stage1/1') }}" class="btn btn-retry" data-no-spa>Retry</a>
+                        <a href="{{ url('/beginner') }}" class="btn btn-next" data-no-spa>Next Stage</a>
                     </div>
                 </div>
             </div>
