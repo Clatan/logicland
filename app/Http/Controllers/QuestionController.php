@@ -145,6 +145,7 @@ class QuestionController extends Controller
             'popup_home' => route('home'),
             'popup_retry' => url()->previous(),
             'popup_next' => url('/beginner'),
+            'user_stage_id' => $userProgress->stage_id,
         ]);
 
     }

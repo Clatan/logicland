@@ -67,7 +67,7 @@ form {
     width: 200px;
     border-radius: 10px;
     padding: 7px 20px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     font-family: 'Nunito';
     font-style: bold;
@@ -84,7 +84,7 @@ form {
     width: 100px;
     border-radius: 10px;
     padding: 7px 20px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     font-family: 'Nunito';
     font-style: bold;
@@ -103,18 +103,18 @@ p {
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 700;
-    margin: 5px 0;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 27px;
     z-index: 1000;
+    margin: 2px 0;
 }
 
 strong {
     color: #61493D;
     font-family: 'Nunito';
-    font-style: normal;
+    font-style: bold;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 27px;
     margin-right: 20px;
     z-index: 1000;
@@ -150,18 +150,22 @@ strong {
     width: 100%;
 }
 
-.text-overlay-small {
-    color: #FFF;
-    text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: "Jolly Lodger";
-    font-size: 38px;
+.account2, .account1{
+    color: #61493D;
+    font-family: 'Nunito';
     font-style: normal;
-    font-weight: 250;
-    z-index: 10;
-    text-align: left;
-    line-height: normal;
-    position: absolute;
-    width: 100%;
+    font-weight: 900;
+    font-size: 18px;
+    z-index: 1000;
+}
+
+.account {
+    color: #61493D;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    z-index: 1000;
 }
 
 .setting-input {
@@ -172,7 +176,7 @@ strong {
     padding: 10px;
     border: 1px solid #61493D;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 14px;
     z-index: 1000;
     font-family: 'Nunito', sans-serif;
     font-weight: 900;
@@ -211,7 +215,7 @@ label {
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 18px;
     z-index: 1000;
 }
 
@@ -229,6 +233,7 @@ label {
 
 .profile-container {
     gap: 5px;
+    margin: -10px 0;
 }
 
 @media (max-width: 1200px) {
