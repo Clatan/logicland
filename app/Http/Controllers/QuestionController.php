@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Question;
+use App\Models\Progress;
 
 class QuestionController extends Controller
 {
@@ -81,11 +82,21 @@ class QuestionController extends Controller
         $answer = $request->input('answer');
 
         $question = Question::findOrFail($questionId);
+        $user_id = auth()->id();
 
         if ($answer === $question->question_answer) {
             $status = 'Success';
+            $userProgress = Progress::where('user_id', $user_id)->firstOrFail();
+            $userProgress->stage_id += 1;
+            $userProgress->save(); 
         } else {
             $status = 'Failed';
+            $userProgress = Progress::where('user_id', $user_id)->firstOrFail();
+            $userProgress->attempt_remaining -= 1; 
+            if ($userProgress->attempt_remaining < 0) {
+                $userProgress->attempt_remaining = 0;
+            }
+            $userProgress->save(); 
         }
 
         // Simpan status + tombol ke session
