@@ -1,22 +1,17 @@
-.stage1 {
-    position: absolute;
-    top: 390px;
-    left: 60px;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    overflow: hidden; /* Mencegah scroll di semua ukuran */
 }
 
-.stage2 {
-    position: absolute;
-    top: 350px;
-    left: 460px;
-}
+/* Default styles for MOBILE & TABLET (Ponsel & Tablet) */
 
-.stage3 {
-    position: absolute;
-    top: 540px;
-    right: 590px;
-}
 
-.stage4 {
+.stage1, .stage2, .stage3, .stage4, .stage5 {
     position: absolute;
     bottom: -160px;
     right: 400px;
@@ -122,29 +117,9 @@
         transform: translate(-230px, -30px);
     }
 
-    .stage1:hover{
-        width: 20%;
-        transform: translate(0px, -250px) scale(1.1);
-    }
-
-    .stage2:hover{
-        width: 20%;
-        transform: translate(-80px, -20px) scale(1.1);
-    }
-
-    .stage3:hover{
-        width: 20%;
-        transform: translate(250px, -20px) scale(1.1);
-    }
-
-    .stage4:hover{
-        width: 20%;
-        transform: translate(350px, -200px) scale(1.1);
-    }
-
-    .stage5:hover{
-        width: 20%;
-        transform: translate(-230px, -30px) scale(1.1);
-    }
-
+    .stage1:hover { transform: translate(-50px, -120px) scale(1.1); }
+    .stage2:hover { transform: translate(-100px, -180px) scale(1.1); }
+    .stage3:hover { transform: translate(150px, -200px) scale(1.1); }
+    .stage4:hover { transform: translate(80px, -230px) scale(1.1); }
+    .stage5:hover { transform: translate(0px, -190px) scale(1.1); }
 }
