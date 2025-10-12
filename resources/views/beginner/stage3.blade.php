@@ -17,7 +17,7 @@
         </div>
 
         <div class="navbar-left" id="life-container">
-            
+
         </div>
         <div class="navbar-center">
             <P class="text-overlay">Stage {{ $question->question_id }}</P>
@@ -32,7 +32,7 @@
         <div class="question-container" style="justify-content: center; align-items: center;">
             <img src="{{ asset('asset/beginner/' . $question->question_detail) }}" alt="Soal" width="600"
                 class="question-img">
-            <div >
+            <div>
                 <form action="/submit-answer" method="POST" class="answer-container">
                     @csrf
                     <input type="hidden" name="question_id" value="{{ $question->question_id }}">
@@ -55,6 +55,40 @@
                 </form>
 
             </div>
+
+            @if (session('popup_status'))
+                <div class="popup-overlay">
+                    <div class="popup-box">
+                        <p class="popup-header">Stage {{ $question->question_id }}</p>
+                        <p
+                            class="popup-text @if (session('popup_status') === 'Success') status-success
+                                        @else
+                                            status-failed @endif">
+                            {{ session('popup_message') }}</p>
+
+                        <div class="popup-buttons">
+                            <a href="{{ url('/home') }}" class="btn btn-home" data-no-spa>Home</a>
+                            <a href="{{ url('/beginner/stage2/2') }}" class="btn btn-retry" data-no-spa>Retry</a>
+                            @if (session('popup_status') === 'Success')
+                                <a href="{{ url('/beginner') }}" class="btn btn-next" data-no-spa>Next Stage</a>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                {{-- <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const overlay = document.getElementById('popupOverlay');
+                    overlay.style.display = 'flex'; 
+
+                    overlay.addEventListener('click', (e) => {
+                        if (e.target === overlay) {
+                            overlay.style.display = 'none';
+                        }
+                    });
+                });
+            </script> --}}
+            @endif
+
         </div>
 
         {{-- POPUP (selalu tampil jika session ada) --}}
