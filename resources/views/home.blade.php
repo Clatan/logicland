@@ -9,14 +9,8 @@
 @section('content')
 
     <div class="navbar">
-        <div class="navbar-left">
-            @php
-                $attempts = session('attempt_remaining', 0); // default 0 kalau nggak ada
-            @endphp
-
-            @for ($i = 0; $i < $attempts; $i++)
-                <img src="{{ asset('asset/life.svg') }}" alt="life">
-            @endfor
+        <div class="navbar-left" id="life-container">
+   
         </div>
 
         <div class="navbar-center">
@@ -125,5 +119,24 @@
                 });
             }
         });
+
+        function updateAttempts() {
+            fetch('/user/attempts')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('life-container');
+                    container.innerHTML = ''; // kosongkan dulu
+                    for (let i = 0; i < data.attempt_remaining; i++) {
+                        const img = document.createElement('img');
+                        img.src = '{{ asset('asset/life.svg') }}';
+                        img.alt = 'life';
+                        container.appendChild(img);
+                    }
+                });
+        }
+
+        // update setiap 2 detik
+        setInterval(updateAttempts, 2000);
+        updateAttempts(); // panggil langsung saat page load
     </script>
 @endsection
