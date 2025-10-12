@@ -121,12 +121,16 @@ class QuestionController extends Controller
         $user_id = auth()->id();
 
         if ($answer === $question->question_answer) {
+            $current_stage = $question->question_id;
+
             $status = 'Success';
+            $message = 'Wow Incredible! You Successfully finish the Stage ' . $current_stage;
             $userProgress = Progress::where('user_id', $user_id)->firstOrFail();
             $userProgress->stage_id += 1;
             $userProgress->save(); 
         } else {
             $status = 'Failed';
+            $message = 'Ouh no, You failed the Stage. Please try again!';
             $userProgress = Progress::where('user_id', $user_id)->firstOrFail();
             $userProgress->attempt_remaining -= 1; 
             if ($userProgress->attempt_remaining < 0) {
@@ -135,9 +139,9 @@ class QuestionController extends Controller
             $userProgress->save(); 
         }
 
-        // Simpan status + tombol ke session
         return back()->with([
             'popup_status' => $status,
+            'popup_message' => $message,
             'popup_home' => route('home'),
             'popup_retry' => url()->previous(),
             'popup_next' => url('/beginner'),

@@ -60,20 +60,27 @@
         @if (session('popup_status'))
             <div class="popup-overlay">
                 <div class="popup-box">
-                    <p class="popup-text">{{ session('popup_status') }}</p>
+                    <p class="popup-header">Stage {{ $question->question_id }}</p>
+                    <p class="popup-text @if(session('popup_status') === 'Success')
+                                            status-success
+                                        @else
+                                            status-failed
+                                        @endif">{{ session('popup_message') }}</p>
+                    
                     <div class="popup-buttons">
                         <a href="{{ url('/home') }}" class="btn btn-home" data-no-spa>Home</a>
                         <a href="{{ url('/beginner/stage1/1') }}" class="btn btn-retry" data-no-spa>Retry</a>
-                        <a href="{{ url('/beginner') }}" class="btn btn-next" data-no-spa>Next Stage</a>
+                        @if(session('popup_status') === 'Success')
+                            <a href="{{ url('/beginner') }}" class="btn btn-next" data-no-spa>Next Stage</a>
+                        @endif
                     </div>
                 </div>
             </div>
             {{-- <script>
                 document.addEventListener('DOMContentLoaded', () => {
                     const overlay = document.getElementById('popupOverlay');
-                    overlay.style.display = 'flex'; // tampilkan popup
+                    overlay.style.display = 'flex';
 
-                    // Klik di luar kotak popup untuk menutup
                     overlay.addEventListener('click', (e) => {
                         if (e.target === overlay) {
                             overlay.style.display = 'none';
