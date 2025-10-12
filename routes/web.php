@@ -35,6 +35,9 @@ Route::post('/logout', function(){
     return redirect('/login')->with('success','Logout successful');
 })->name('logout');
 
+// route life
+Route::get('/user/attempts', [QuestionController::class, 'getAttempts']);
+
 // Route untuk pulau
 Route::get('/beginner', [PageController::class, 'beginner'])->name('beginner');
 Route::get('/elementary', [PageController::class, 'elementary'])->name('elementary');

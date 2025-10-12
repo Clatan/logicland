@@ -8,6 +8,17 @@ use App\Models\Progress;
 
 class QuestionController extends Controller
 {
+    public function getAttempts()
+    {
+        $user_id = auth()->id();
+        $progress = Progress::where('user_id', $user_id)->first();
+
+        return response()->json([
+            'attempt_remaining' => $progress->attempt_remaining
+        ]);
+    }
+
+
     public function show($id)
     {
         $question = Question::findOrFail($id);
