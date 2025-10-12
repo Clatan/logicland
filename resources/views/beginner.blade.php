@@ -62,24 +62,6 @@
             </a>
         @endforeach
 
-
-        <style>
-            body {
-                background: url('/asset/map-spring/spring.svg') no-repeat center center;
-                background-size: cover;
-                background-attachment: fixed;
-            }
-
-            @media (min-width: 1024px) {
-                body {
-                    background: url('asset/map-spring/bckg-spring.svg') no-repeat top left;
-                    background-size: 100% auto;
-                    height: 140vh;
-                    width: 100%;
-                    display: flex;
-                }
-            }
-        </style>
     </div>
     <script>
         function updateAttempts() {
@@ -98,66 +80,72 @@
         }
 
         setInterval(updateAttempts, 2000);
-        updateAttempts(); 
+        updateAttempts();
     </script>
 
-<style>
-            html,
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                height: 100%;
-                overflow-x: hidden;
-                overflow-y: auto;
-                background-color: #000;
-            }
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #000;
+        }
 
+        body {
+            background: url('{{ asset('asset/map-spring/bckg-spring.svg') }}') no-repeat top left;
+            background-size: 100% auto;
+            background-attachment: scroll;
+            height: 120vh;
+            display: flex;
+        }
+
+        /* mobile phone view */
+        @media (max-width: 768px) {
             body {
-                background: url('{{ asset('asset/map-spring/bckg-spring.svg') }}') no-repeat top left;
-                background-size: 100% auto;
-                background-attachment: scroll;
+                background: url('asset/map-spring/spring.svg') no-repeat top left;
+                background-size: cover;
                 height: 120vh;
+                width: 100%;
                 display: flex;
             }
+        }
 
-            @media (max-width: 700px) {
-                body {
-                    background: url('asset/map-spring/spring.svg') no-repeat top left;
-                    background-size: cover;
-                    height: 100%;
-                    width: 100%;
-                    display: flex;
-                }
+        /* setengah layar laptop lebih dikit yang kepake */
+        @media (max-width: 900px) {
+            body {
+                background: url('asset/map-spring/spring.svg') no-repeat top left;
+                background-size: cover;
+                height: 120vh;
+                width: 100%;
+                display: flex;
             }
-            @media (max-width: 769px){
-                body {
-                    background: url('asset/map-spring/spring.svg') no-repeat top left;
-                    background-size: cover;
-                    height: 100%;
-                    width: 100%;
-                    display: flex;
-                }
-            }
+        }
 
-            @media (min-width: 780px){
-                body {
-                    background: url('asset/map-spring/spring.svg') no-repeat top left;
-                    background-size: 100% auto;
-                    height: 130vh;
-                    width: 100%;
-                    display: flex;
-                }
-            }
 
-            @media (min-width: 1024px){
-                body {
-                    background: url('asset/map-spring/bckg-spring.svg') no-repeat top left;
-                    background-size: 100% auto;
-                    height: 120vh;
-                    width: 100%;
-                    display: flex;
-                }
+        /* layar sisa 1/5 fullscreen */
+        @media (min-width: 992px) {
+            body {
+                background: url('asset/map-spring/spring.svg') no-repeat top left;
+                background-size: 100% auto;
+                height: 120vh;
+                width: 100%;
+                display: flex;
             }
-        </style>
+        }
+
+
+        @media (min-width: 1024px) {
+            body {
+                background: url('asset/map-spring/bckg-spring.svg') no-repeat top left;
+                background-size: 100% auto;
+                height: 120vh;
+                width: 100%;
+                display: flex;
+            }
+        }
+    </style>
 @endsection

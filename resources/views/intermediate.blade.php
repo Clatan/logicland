@@ -89,6 +89,51 @@
                 height: 120vh;
                 display: flex;
             }
+
+            /* mobile phone view */
+        @media (max-width: 768px) {
+            body {
+                background: url('asset/map-autumn/autumn.svg') no-repeat top left;
+                background-size: cover;
+                height: 120vh;
+                width: 100%;
+                display: flex;
+            }
+        }
+
+        /* setengah layar laptop lebih dikit yang kepake */
+        @media (max-width: 900px) {
+            body {
+                background: url('asset/map-autumn/autumn.svg') no-repeat top left;
+                background-size: cover;
+                height: 120vh;
+                width: 100%;
+                display: flex;
+            }
+        }
+
+
+        /* layar sisa 1/5 fullscreen */
+        @media (min-width: 992px) {
+            body {
+                background: url('asset/map-autumn/autumn.svg') no-repeat top left;
+                background-size: 100% auto;
+                height: 120vh;
+                width: 100%;
+                display: flex;
+            }
+        }
+
+
+        @media (min-width: 1024px) {
+            body {
+                background: url('asset/map-autumn/bckg-autumn.svg') no-repeat top left;
+                background-size: 100% auto;
+                height: 120vh;
+                width: 100%;
+                display: flex;
+            }
+        }
         </style>
     </div>
 

@@ -66,8 +66,8 @@
 
         @foreach ($stages as $viewStage => $url)
             @php
-                $dbStageId = $stageIdMap[$viewStage]; 
-                $locked = $dbStageId > $currentStage; 
+                $dbStageId = $stageIdMap[$viewStage];
+                $locked = $dbStageId > $currentStage;
             @endphp
             <a href="{{ $locked ? '#' : $url }}" data-no-spa
                 class="button-stage stage{{ $viewStage }} {{ $locked ? 'locked' : '' }}">
@@ -81,6 +81,51 @@
                 background-size: 100% auto;
                 background-attachment: scroll;
                 height: 120vh;
+            }
+
+            /* mobile phone view */
+            @media (max-width: 768px) {
+                body {
+                    background: url('asset/map-summer/summer.svg') no-repeat top left;
+                    background-size: cover;
+                    height: 120vh;
+                    width: 100%;
+                    display: flex;
+                }
+            }
+
+            /* setengah layar laptop lebih dikit yang kepake */
+            @media (max-width: 900px) {
+                body {
+                    background: url('asset/map-summer/summer.svg') no-repeat top left;
+                    background-size: cover;
+                    height: 120vh;
+                    width: 100%;
+                    display: flex;
+                }
+            }
+
+
+            /* layar sisa 1/5 fullscreen */
+            @media (min-width: 992px) {
+                body {
+                    background: url('asset/map-summer/summer.svg') no-repeat top left;
+                    background-size: 100% auto;
+                    height: 120vh;
+                    width: 100%;
+                    display: flex;
+                }
+            }
+
+
+            @media (min-width: 1024px) {
+                body {
+                    background: url('asset/map-summer/bckg-summer.svg') no-repeat top left;
+                    background-size: 100% auto;
+                    height: 120vh;
+                    width: 100%;
+                    display: flex;
+                }
             }
         </style>
     </div>

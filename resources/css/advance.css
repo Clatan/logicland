@@ -47,6 +47,18 @@
     pointer-events: none; /* biar tidak mengganggu klik */
 }
 
+@media (min-width: 1024px) {
+
+}
+
+@media (min-width: 992px){
+  
+}
+
+@media (max-width: 900px) {
+
+}
+
 @media (max-width: 768px) {
 
      .stage1{
