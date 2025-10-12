@@ -26,20 +26,9 @@ class PageController extends Controller
         return view('signup');
     }
 
-      public function home()
+    public function home()
     {
         return view('home');
-    }
-
-    public function beginner()
-    {
-        $user_id = auth()->id();
-        $progress = Progress::where('user_id', $user_id)->first();
-
-        $currentStage = $progress->stage_id ?? 1;
-
-        return view('beginner.map', compact('currentStage'));
-
     }
     
     public function elementary()

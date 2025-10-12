@@ -10,7 +10,7 @@
 
     <div class="navbar">
         <div class="navbar-left" id="life-container">
-   
+
         </div>
 
         <div class="navbar-center">
@@ -25,7 +25,38 @@
         </div>
     </div>
 
+    @php
+        // currentStage dari controller
+        // 1-5 -> Beginner unlocked
+        // 6-10 -> Beginner + Elementary
+        // 11-15 -> Beginner + Elementary + Intermediate
+        // 16-20 -> semua unlocked
+    @endphp
+
     <div>
+        <a href="{{ $currentStage >= 1 ? url('/beginner') : '#' }}" data-no-spa
+            class="island-container top-left beginner {{ $currentStage < 1 ? 'locked' : '' }}">
+            <img src="{{ asset('asset/island-spring.svg') }}" alt="Beginner">
+        </a>
+
+        <a href="{{ $currentStage >= 6 ? url('/elementary') : '#' }}" data-no-spa
+            class="island-container top-right elementary {{ $currentStage < 6 ? 'locked' : '' }}">
+            <img src="{{ asset('asset/island-summer.svg') }}" alt="Elementary">
+        </a>
+
+        <a href="{{ $currentStage >= 11 ? url('/intermediate') : '#' }}" data-no-spa
+            class="island-container bottom-left intermediate {{ $currentStage < 11 ? 'locked' : '' }}">
+            <img src="{{ asset('asset/island-autumn.svg') }}" alt="Intermediate">
+        </a>
+
+        <a href="{{ $currentStage >= 16 ? url('/advance') : '#' }}" data-no-spa
+            class="island-container bottom-right advance {{ $currentStage < 16 ? 'locked' : '' }}">
+            <img src="{{ asset('asset/island-winter.svg') }}" alt="Advance">
+        </a>
+    </div>
+
+
+    {{-- <div>
         <a href="{{ url('/beginner') }}" data-no-spa>
             <img src="{{ asset('asset/island-spring.svg') }} " alt="Beginner" class="island-container top-left beginner">
         </a>
@@ -43,7 +74,11 @@
         <a href="{{ url('/advance') }}" data-no-spa>
             <img src="{{ asset('asset/island-winter.svg') }}" alt="Advance" class="island-container bottom-right advance">
         </a>
-    </div>
+    </div> --}}
+
+
+
+
 
     <img src="{{ asset('asset/bridge-1.svg') }}" alt="road" class="road1">
     <img src="{{ asset('asset/bridge-2.svg') }}" alt="road" class="road2">
@@ -118,6 +153,37 @@
                     settingBtn.src = "{{ asset('asset/setting.svg') }}";
                 });
             }
+
+            // const lifeContainer = document.getElementById('life-container');
+            // const lifeImg = "{{ asset('asset/life.svg') }}"; 
+            // let timerStarted = false;
+
+            // function startTimer(seconds) {
+            //     let timer = seconds;
+            //     const timerDisplayId = 'regen-timer';
+            //     let timerDisplay = document.getElementById(timerDisplayId);
+            //     if (!timerDisplay) {
+            //         timerDisplay = document.createElement('div');
+            //         timerDisplay.id = timerDisplayId;
+            //         timerDisplay.style.color = 'white';
+            //         timerDisplay.style.marginTop = '5px';
+            //         lifeContainer.appendChild(timerDisplay);
+            //     }
+
+            //     function tick() {
+            //         const min = Math.floor(timer / 60);
+            //         const sec = timer % 60;
+            //         timerDisplay.innerText = `Next life in: ${min}:${sec.toString().padStart(2,'0')}`;
+            //         if (timer <= 0) return;
+            //         timer--;
+            //         setTimeout(tick, 1000);
+            //     }
+
+            //     tick();
+            // }
+
+
+
         });
 
         function updateAttempts() {
@@ -137,6 +203,6 @@
 
         // update setiap 2 detik
         setInterval(updateAttempts, 2000);
-        updateAttempts(); // panggil langsung saat page load
+        updateAttempts();
     </script>
 @endsection

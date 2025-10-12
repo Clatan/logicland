@@ -56,7 +56,7 @@
         @endphp
 
         @foreach ($stages as $stage => $url)
-            <a href="{{ $stage <= $currentStage ? $url : '#' }}"
+            <a href="{{ $stage <= $currentStage ? $url : '#' }}" data-no-spa
                 class="button-stage stage{{ $stage }} {{ $stage > $currentStage ? 'locked' : '' }}">
                 <img src="{{ asset('asset/map-spring/spring' . $stage . '.svg') }}" alt="stage">
             </a>
@@ -90,7 +90,7 @@
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById('life-container');
-                    container.innerHTML = ''; // kosongkan dulu
+                    container.innerHTML = '';
                     for (let i = 0; i < data.attempt_remaining; i++) {
                         const img = document.createElement('img');
                         img.src = '{{ asset('asset/life.svg') }}';
@@ -100,9 +100,8 @@
                 });
         }
 
-        // update setiap 2 detik
         setInterval(updateAttempts, 2000);
-        updateAttempts(); // panggil langsung saat page load
+        updateAttempts(); 
     </script>
 
 @endsection

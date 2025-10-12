@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <a href="{{ url('/advance/stage1/1') }}" data-no-spa>
+        {{-- <a href="{{ url('/advance/stage1/1') }}" data-no-spa>
             <img src="{{ asset('asset/map-winter/winter1.svg') }}" alt="stage" class="stage1 button-stage">
         </a>
 
@@ -49,8 +49,39 @@
 
         <a href="{{ url('/advance/stage5/5') }}" data-no-spa>
             <img src="{{ asset('asset/map-winter/winter5.svg') }}" alt="stage" class="stage5 button-stage">
-        </a>
+        </a> --}}
+
+        @php
+            $stages = [
+                1 => '/advance/stage1/1',
+                2 => '/advance/stage2/2',
+                3 => '/advance/stage3/3',
+                4 => '/advance/stage4/4',
+                5 => '/advance/stage5/5',
+            ];
+
+            // Mapping view stage -> stage_id di DB
+            $stageIdMap = [
+                1 => 16,
+                2 => 17,
+                3 => 18,
+                4 => 19,
+                5 => 20,
+            ];
+        @endphp
+
+        @foreach ($stages as $viewStage => $url)
+            @php
+                $dbStageId = $stageIdMap[$viewStage];
+                $locked = $dbStageId > $currentStage;
+            @endphp
+            <a href="{{ $locked ? '#' : $url }}" data-no-spa
+                class="button-stage stage{{ $viewStage }} {{ $locked ? 'locked' : '' }}">
+                <img src="{{ asset('asset/map-summer/summer' . $viewStage . '.svg') }}" alt="stage">
+            </a>
+        @endforeach
     </div>
+
 
     <style>
         body {

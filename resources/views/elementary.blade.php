@@ -16,7 +16,7 @@
                     onmouseover="this.src='{{ asset('asset/back-hover.svg') }}'"
                     onmouseout="this.src='{{ asset('asset/back.svg') }}'">
             </div>
-            <div class="navbar-left"  id="life-container">
+            <div class="navbar-left" id="life-container">
 
             </div>
             <div class="navbar-center">
@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <a href="{{ url('/elementary/stage1/1') }}" data-no-spa>
+        {{-- <a href="{{ url('/elementary/stage1/1') }}" data-no-spa>
             <img src="{{ asset('asset/map-summer/summer1.svg') }}" alt="stage" class="stage1 button-stage">
         </a>
         <a href="{{ url('/elementary/stage2/2') }}" data-no-spa>
@@ -42,7 +42,38 @@
         </a>
         <a href="{{ url('/elementary/stage5/5') }}" data-no-spa>
             <img src="{{ asset('asset/map-summer/summer5.svg') }}" alt="stage" class="stage5 button-stage">
-        </a>
+        </a> --}}
+
+
+        @php
+            $stages = [
+                1 => '/elementary/stage1/1',
+                2 => '/elementary/stage2/2',
+                3 => '/elementary/stage3/3',
+                4 => '/elementary/stage4/4',
+                5 => '/elementary/stage5/5',
+            ];
+
+            // Mapping view stage -> stage_id di DB
+            $stageIdMap = [
+                1 => 6,
+                2 => 7,
+                3 => 8,
+                4 => 9,
+                5 => 10,
+            ];
+        @endphp
+
+        @foreach ($stages as $viewStage => $url)
+            @php
+                $dbStageId = $stageIdMap[$viewStage]; 
+                $locked = $dbStageId > $currentStage; 
+            @endphp
+            <a href="{{ $locked ? '#' : $url }}" data-no-spa
+                class="button-stage stage{{ $viewStage }} {{ $locked ? 'locked' : '' }}">
+                <img src="{{ asset('asset/map-summer/summer' . $viewStage . '.svg') }}" alt="stage">
+            </a>
+        @endforeach
 
         <style>
             body {
