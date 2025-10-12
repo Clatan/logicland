@@ -17,10 +17,8 @@
                 onmouseout="this.src='{{ asset('asset/back.svg') }}'">
         </div>
 
-        <div class="navbar-left">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
+        <div class="navbar-left" id="life-container">
+           
         </div>
         <div class="navbar-center">
             <P class="text-overlay">Stage {{ $question->question_id }}</P>

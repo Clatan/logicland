@@ -17,9 +17,7 @@
         </div>
 
         <div class="navbar-left">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
-            <img src="{{ asset('asset/life.svg') }}" alt="life">
+
         </div>
         <div class="navbar-center">
             <P class="text-overlay">Stage {{ $question->question_id }}</P>
@@ -34,7 +32,7 @@
         <div class="question-container" style="justify-content: center; align-items: center;">
             <img src="{{ asset('asset/elementary/' . $question->question_detail) }}" alt="Soal" width="600"
                 class="question-img">
-            <div >
+            <div>
                 <form action="/submit-answer" method="POST" class="answer-container">
                     @csrf
                     <input type="hidden" name="question_id" value="{{ $question->question_id }}">
@@ -111,5 +109,27 @@
             */
         }
     </style>
+
+    <script>
+        function updateAttempts() {
+            fetch('/user/attempts')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('life-container');
+                    container.innerHTML = ''; // kosongkan dulu
+                    for (let i = 0; i < data.attempt_remaining; i++) {
+                        const img = document.createElement('img');
+                        img.src = '{{ asset('asset/life.svg') }}';
+                        img.alt = 'life';
+                        container.appendChild(img);
+                    }
+                });
+        }
+
+        // update setiap 2 detik
+        setInterval(updateAttempts, 2000);
+        updateAttempts(); // panggil langsung saat page load
+    </script>
+
 
 @endsection
