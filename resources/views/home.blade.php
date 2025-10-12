@@ -22,6 +22,9 @@
             <a href="/setting" data-no-spa>
                 <img id="setting-btn" src="{{ asset('asset/setting.svg') }}" alt="setting">
             </a>
+            <audio id="bgMusic" loop>
+                <source src="{{ asset('asset/bg-music.mp3') }}" type="audio/mpeg">
+            </audio>
         </div>
     </div>
 
@@ -75,115 +78,73 @@
 @endsection
 
 @section('custom-js')
-<script type="module">
-document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById('bgMusic');
-    const audioBtn = document.getElementById('audio-btn');
-    const settingBtn = document.getElementById('setting-btn');
+    <script type="module">
+        document.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById('bgMusic');
+            const audioBtn = document.getElementById('audio-btn');
+            const settingBtn = document.getElementById('setting-btn');
 
-    let isPlaying = localStorage.getItem('audioPlaying') === 'true';
+            let isPlaying = localStorage.getItem('audioPlaying') === 'true';
 
-    // Atur icon awal sesuai status terakhir
-    audioBtn.src = isPlaying ?
-        "{{ asset('asset/audio-on.svg') }}" :
-        "{{ asset('asset/audio-off.svg') }}";
+            // Atur icon awal sesuai status terakhir
+            audioBtn.src = isPlaying ?
+                "{{ asset('asset/audio-on.svg') }}" :
+                "{{ asset('asset/audio-off.svg') }}";
 
-    // Mainkan audio jika sebelumnya sedang aktif
-    if (isPlaying) audio.play().catch(() => {});
+            // Mainkan audio jika sebelumnya sedang aktif
+            if (isPlaying) audio.play().catch(() => {});
 
-    // Klik toggle audio
-    audioBtn.addEventListener('click', () => {
-        if (isPlaying) {
-            audio.pause();
-            audioBtn.src = "{{ asset('asset/audio-off.svg') }}";
-        } else {
-            audio.play().catch(() => {});
-            audioBtn.src = "{{ asset('asset/audio-on.svg') }}";
+            // Klik toggle audio
+            audioBtn.addEventListener('click', () => {
+                if (isPlaying) {
+                    audio.pause();
+                    audioBtn.src = "{{ asset('asset/audio-off.svg') }}";
+                } else {
+                    audio.play().catch(() => {});
+                    audioBtn.src = "{{ asset('asset/audio-on.svg') }}";
+                }
+                isPlaying = !isPlaying;
+                localStorage.setItem('audioPlaying', isPlaying);
+            });
+
+            // Hover efek audio
+            audioBtn.addEventListener('mouseenter', () => {
+                audioBtn.src = isPlaying ?
+                    "{{ asset('asset/audio-turnoff.svg') }}" :
+                    "{{ asset('asset/audio-turnon.svg') }}";
+            });
+            audioBtn.addEventListener('mouseleave', () => {
+                audioBtn.src = isPlaying ?
+                    "{{ asset('asset/audio-on.svg') }}" :
+                    "{{ asset('asset/audio-off.svg') }}";
+            });
+
+            if (settingBtn) {
+                settingBtn.addEventListener('mouseenter', () => {
+                    settingBtn.src = "{{ asset('asset/setting-hover.svg') }}";
+                });
+                settingBtn.addEventListener('mouseleave', () => {
+                    settingBtn.src = "{{ asset('asset/setting.svg') }}";
+                });
+            }
+        });
+
+        function updateAttempts() {
+            fetch('/user/attempts')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('life-container');
+                    container.innerHTML = '';
+                    for (let i = 0; i < data.attempt_remaining; i++) {
+                        const img = document.createElement('img');
+                        img.src = '{{ asset('asset/life.svg') }}';
+                        img.alt = 'life';
+                        container.appendChild(img);
+                    }
+                });
         }
-        isPlaying = !isPlaying;
-        localStorage.setItem('audioPlaying', isPlaying);
-    });
 
-    // Hover efek audio
-    audioBtn.addEventListener('mouseenter', () => {
-        audioBtn.src = isPlaying ?
-            "{{ asset('asset/audio-turnoff.svg') }}" :
-            "{{ asset('asset/audio-turnon.svg') }}";
-    });
-    audioBtn.addEventListener('mouseleave', () => {
-        audioBtn.src = isPlaying ?
-            "{{ asset('asset/audio-on.svg') }}" :
-            "{{ asset('asset/audio-off.svg') }}";
-    });
-
-    // Hover efek setting
-    if (settingBtn) {
-        settingBtn.addEventListener('mouseenter', () => {
-            settingBtn.src = "{{ asset('asset/setting-hover.svg') }}";
-        });
-        settingBtn.addEventListener('mouseleave', () => {
-            settingBtn.src = "{{ asset('asset/setting.svg') }}";
-        });
-    }
-
-    // Jalankan update life pertama kali
-    updateAttempts();
-    setInterval(updateAttempts, 2000);
-});
-
-
-// =========================================================
-// FUNGSI DI LUAR DOMContentLoaded AGAR GLOBAL
-// =========================================================
-function startTimer(seconds) {
-    const lifeContainer = document.getElementById('life-container');
-    if (!lifeContainer) return;
-
-    let timer = seconds;
-    const timerDisplayId = 'regen-timer';
-    let timerDisplay = document.getElementById(timerDisplayId);
-    if (!timerDisplay) {
-        timerDisplay = document.createElement('div');
-        timerDisplay.id = timerDisplayId;
-        timerDisplay.style.color = 'white';
-        timerDisplay.style.marginTop = '5px';
-        lifeContainer.appendChild(timerDisplay);
-    }
-
-    function tick() {
-        const min = Math.floor(timer / 60);
-        const sec = timer % 60;
-        timerDisplay.innerText = `Next life in: ${min}:${sec.toString().padStart(2,'0')}`;
-        if (timer <= 0) return;
-        timer--;
-        setTimeout(tick, 1000);
-    }
-
-    tick();
-}
-
-function updateAttempts() {
-    fetch('/user/attempts')
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById('life-container');
-            if (!container) return;
-            container.innerHTML = ''; // kosongkan dulu
-
-            // tampilkan life
-            for (let i = 0; i < data.attempt_remaining; i++) {
-                const img = document.createElement('img');
-                img.src = "{{ asset('asset/life.svg') }}";
-                img.alt = 'life';
-                container.appendChild(img);
-            }
-
-            // kalau attempt kurang dari 5 → tampilkan timer regenerasi
-            if (data.attempt_remaining < 5 && data.next_life_seconds) {
-                startTimer(data.next_life_seconds);
-            }
-        })
-        .catch(error => console.error('Error updating attempts:', error));
-}
-</script>
+        setInterval(updateAttempts, 2000);
+        updateAttempts();
+    </script>
 @endsection
