@@ -61,17 +61,17 @@
             <div class="popup-overlay">
                 <div class="popup-box">
                     <p class="popup-header">Stage {{ $question->question_id }}</p>
-                    <p
-                        class="popup-text @if (session('popup_status') === 'Success') status-success
+                    <p class="popup-text @if(session('popup_status') === 'Success')
+                                            status-success
                                         @else
-                                            status-failed @endif">
-                        {{ session('popup_message') }}</p>
-
+                                            status-failed
+                                        @endif">{{ session('popup_message') }}</p>
+                    
                     <div class="popup-buttons">
                         <a href="{{ url('/home') }}" class="btn btn-home" data-no-spa>Home</a>
-                        <a href="{{ url('/beginner/stage2/2') }}" class="btn btn-retry" data-no-spa>Retry</a>
-                        @if (session('popup_status') === 'Success')
-                            <a href="{{ url('/beginner') }}" class="btn btn-next" data-no-spa>Next Stage</a>
+                        <a href="{{ url('/elementary/stage2/2') }}" class="btn btn-retry" data-no-spa>Retry</a>
+                        @if(session('popup_status') === 'Success')
+                            <a href="{{ url('/elementary') }}" class="btn btn-next" data-no-spa>Next Stage</a>
                         @endif
                     </div>
                 </div>

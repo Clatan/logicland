@@ -85,38 +85,48 @@ class QuestionController extends Controller
                 $question->question_id = 8;
             } elseif (str_contains($currentUrl, 'stage4')) {
                 $stage = 'stage4';
-                $question_id = 9;
+                $question->question_id = 9;
             } elseif (str_contains($currentUrl, 'stage5')) {
                 $stage = 'stage5';
-                $question_id = 10;
+                $question->question_id = 10;
             }
         } else if (str_contains($currentUrl, 'intermediate')) {
             $level = 'intermediate';
 
             if (str_contains($currentUrl, 'stage1')) {
                 $stage = 'stage1';
+                $question->question_id = 11;
             } elseif (str_contains($currentUrl, 'stage2')) {
                 $stage = 'stage2';
+                $question->question_id = 12;
             } elseif (str_contains($currentUrl, 'stage3')) {
                 $stage = 'stage3';
+                $question->question_id = 13;
             } elseif (str_contains($currentUrl, 'stage4')) {
                 $stage = 'stage4';
+                $question->question_id = 14;
             } elseif (str_contains($currentUrl, 'stage5')) {
                 $stage = 'stage5';
+                $question->question_id = 15;
             }
         } else if (str_contains($currentUrl, 'advance')) {
             $level = 'advance';
 
             if (str_contains($currentUrl, 'stage1')) {
                 $stage = 'stage1';
+                $question->question_id = 16;
             } elseif (str_contains($currentUrl, 'stage2')) {
                 $stage = 'stage2';
+                $question->question_id = 17;
             } elseif (str_contains($currentUrl, 'stage3')) {
                 $stage = 'stage3';
+                $question->question_id = 18;
             } elseif (str_contains($currentUrl, 'stage4')) {
                 $stage = 'stage4';
+                $question->question_id = 19;
             } elseif (str_contains($currentUrl, 'stage5')) {
                 $stage = 'stage5';
+                $question->question_id = 20;
             }
         }
 
@@ -156,6 +166,7 @@ class QuestionController extends Controller
             'popup_home' => route('home'),
             'popup_retry' => url()->previous(),
             'popup_next' => url('/beginner'),
+            'user_stage_id' => $userProgress->stage_id,
         ]);
 
     }

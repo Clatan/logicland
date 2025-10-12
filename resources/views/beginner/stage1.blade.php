@@ -70,7 +70,7 @@
                     <div class="popup-buttons">
                         <a href="{{ url('/home') }}" class="btn btn-home" data-no-spa>Home</a>
                         <a href="{{ url('/beginner/stage1/1') }}" class="btn btn-retry" data-no-spa>Retry</a>
-                        @if(session('popup_status') === 'Success')
+                        @if(session('popup_status') === 'Success' && $question->question_id === session('user_stage_id'))
                             <a href="{{ url('/beginner') }}" class="btn btn-next" data-no-spa>Next Stage</a>
                         @endif
                     </div>
